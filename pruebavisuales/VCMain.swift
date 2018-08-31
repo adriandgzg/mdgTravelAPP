@@ -8,28 +8,63 @@
 
 import UIKit
 
-class VCMain: UIViewController {
+class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate {
+    @IBOutlet weak var viewContentTitle: UIView!
 
+    
+    var nameCell = "CountriesCollectionViewCell"
+    @IBOutlet weak var collectionViewCountries: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        viewContentTitle.backgroundColor = UIColor.clear
+    
+        
+        collectionViewCountries.register(UINib(nibName:nameCell, bundle: nil), forCellWithReuseIdentifier: nameCell)
+            collectionViewCountries.dataSource = self
+    
+        let layout = self.regresaConfiguraciondeELEmentosdelCollection()
+        
+        collectionViewCountries.collectionViewLayout = layout
+        
+    }
+    
+    func regresaConfiguraciondeELEmentosdelCollection()-> UICollectionViewLayout{
+        
+        let layout = UICollectionViewFlowLayout()
+        layout.scrollDirection = .horizontal
+        layout.minimumLineSpacing = 40
+        layout.minimumInteritemSpacing = 0.1
+        let size = CGSize(width: collectionViewCountries.frame.size.width - 40, height: collectionViewCountries.frame.size.height)
+        layout.itemSize = size
+        
+        return layout
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK: Implementacionde delegado de Collectionview
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
     }
-    */
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell : CountriesCollectionViewCell = collectionViewCountries.dequeueReusableCell(withReuseIdentifier: nameCell, for: indexPath) as! CountriesCollectionViewCell
+        
+            cell.imgCountry.image = UIImage(named:"hombre")
+            cell.imgCountry.contentMode = .scaleAspectFill
+            cell.lblNameCountry.text = "España"
+            cell.lblDescriptionCountry.text =  "Lugar del otro lado del continente"
+            cell.layer.cornerRadius = 10
+        
+        //aqui nos pide la celda el collection view
+        return cell
+    }
+    
+    
 
 }

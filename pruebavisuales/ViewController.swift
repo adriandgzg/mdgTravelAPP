@@ -9,13 +9,17 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         self.title = "TravelAPP"
+        self.navigationController?.navigationBar.backIndicatorImage = UIImage (named : "flecha")
+        self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named : "flecha")
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
+        self.navigationController?.navigationBar.isHidden = true
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
