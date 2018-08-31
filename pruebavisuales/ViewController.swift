@@ -17,8 +17,7 @@ class ViewController: UIViewController {
         self.navigationController?.navigationBar.backIndicatorImage = UIImage (named : "flecha")
         self.navigationController?.navigationBar.backIndicatorTransitionMaskImage = UIImage(named : "flecha")
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
-        self.navigationController?.navigationBar.isHidden = true
-        
+
         
     }
 

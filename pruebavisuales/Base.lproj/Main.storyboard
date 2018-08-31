@@ -118,7 +118,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="cxG-TN-Ik4" kind="show" id="EWC-pW-gUN"/>
+                                            <action selector="btnentrarconfacebook:" destination="HxU-Px-Njk" eventType="touchUpInside" id="FeY-j5-U3J"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -172,7 +172,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="cxG-TN-Ik4" kind="show" id="IkV-aE-VBM"/>
+                                            <segue destination="cxG-TN-Ik4" kind="show" identifier="signup" id="IkV-aE-VBM"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -337,7 +337,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="cxG-TN-Ik4" kind="show" id="1JJ-i3-mBZ"/>
+                                            <action selector="btnentrarconfacebook:" destination="za2-ud-p0S" eventType="touchUpInside" id="CqT-qr-2WC"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Explore" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ox1-fQ-32y">
@@ -395,7 +395,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="cxG-TN-Ik4" kind="show" id="Xgv-d1-j2N"/>
+                                            <segue destination="cxG-TN-Ik4" kind="show" identifier="login" id="Xgv-d1-j2N"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -470,6 +470,6 @@
         <image name="hombre" width="375" height="667"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IkV-aE-VBM"/>
+        <segue reference="Xgv-d1-j2N"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -45,5 +45,10 @@ class VCLogIn: UIViewController {
         textfiel.leftView = imagenizquierda
         textfiel.leftViewMode = .always
     }
-
+    
+    
+    @IBAction func btnentrarconfacebook(_ sender: Any) {
+        performSegue(withIdentifier: "login", sender: self)
+    }
+    
 }

@@ -17,7 +17,7 @@ class VCSingUp: UIViewController {
     @IBOutlet weak var btncrearcuenta: UIButton!
     @IBOutlet weak var btnfacebook: UIButton!
     @IBOutlet weak var viewvista: UIView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +46,9 @@ class VCSingUp: UIViewController {
         textfiel.leftViewMode = .always
     }
 
-  
-
+   
+    @IBAction func btnentrarconfacebook(_ sender: Any) {
+        performSegue(withIdentifier: "signup", sender: self)
+    }
+    
 }
