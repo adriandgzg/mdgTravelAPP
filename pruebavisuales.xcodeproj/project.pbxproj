@@ -12,7 +12,9 @@
 		BF1BC8442138A1E000E02203 /* VCMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BC8432138A1E000E02203 /* VCMain.swift */; };
 		BF1BC8C22138DB1F00E02203 /* CountriesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BC8C02138DB1F00E02203 /* CountriesCollectionViewCell.swift */; };
 		BF1BC8C32138DB1F00E02203 /* CountriesCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF1BC8C12138DB1F00E02203 /* CountriesCollectionViewCell.xib */; };
-		BF1BC8C72139AE5300E02203 /* ImagenesyDescripcion.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BC8C62139AE5300E02203 /* ImagenesyDescripcion.swift */; };
+		BF1BC8C72139AE5300E02203 /* Pais.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BC8C62139AE5300E02203 /* Pais.swift */; };
+		BF1BC8D12139C91700E02203 /* Navcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BC8D02139C91700E02203 /* Navcontroller.swift */; };
+		BF1BC8D32139D1D500E02203 /* VCShowSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF1BC8D22139D1D500E02203 /* VCShowSelection.swift */; };
 		BF20A10621386E43005C812E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20A10521386E43005C812E /* AppDelegate.swift */; };
 		BF20A10821386E43005C812E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20A10721386E43005C812E /* ViewController.swift */; };
 		BF20A10B21386E43005C812E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF20A10921386E43005C812E /* Main.storyboard */; };
@@ -45,7 +47,9 @@
 		BF1BC8432138A1E000E02203 /* VCMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMain.swift; sourceTree = "<group>"; };
 		BF1BC8C02138DB1F00E02203 /* CountriesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF1BC8C12138DB1F00E02203 /* CountriesCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountriesCollectionViewCell.xib; sourceTree = "<group>"; };
-		BF1BC8C62139AE5300E02203 /* ImagenesyDescripcion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenesyDescripcion.swift; sourceTree = "<group>"; };
+		BF1BC8C62139AE5300E02203 /* Pais.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pais.swift; sourceTree = "<group>"; };
+		BF1BC8D02139C91700E02203 /* Navcontroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navcontroller.swift; sourceTree = "<group>"; };
+		BF1BC8D22139D1D500E02203 /* VCShowSelection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCShowSelection.swift; sourceTree = "<group>"; };
 		BF20A10221386E43005C812E /* pruebavisuales.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pruebavisuales.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF20A10521386E43005C812E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BF20A10721386E43005C812E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -95,10 +99,40 @@
 			path = CeldasDECollectionVieweMainVC;
 			sourceTree = "<group>";
 		};
+		BF1BC8CD2139C8A900E02203 /* NavController */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BC8D02139C91700E02203 /* Navcontroller.swift */,
+			);
+			path = NavController;
+			sourceTree = "<group>";
+		};
+		BF1BC8CE2139C8BC00E02203 /* Datos */ = {
+			isa = PBXGroup;
+			children = (
+				BF1BC8C62139AE5300E02203 /* Pais.swift */,
+			);
+			name = Datos;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		BF1BC8CF2139C8D300E02203 /* VC Pantallas */ = {
+			isa = PBXGroup;
+			children = (
+				BF20A10521386E43005C812E /* AppDelegate.swift */,
+				BF20A10721386E43005C812E /* ViewController.swift */,
+				BF1BC83F2138836100E02203 /* VCLogIn.swift */,
+				BF1BC8412138840700E02203 /* VCSingUp.swift */,
+				BF1BC8432138A1E000E02203 /* VCMain.swift */,
+				BF1BC8D22139D1D500E02203 /* VCShowSelection.swift */,
+				BF20A10921386E43005C812E /* Main.storyboard */,
+			);
+			path = "VC Pantallas";
+			sourceTree = "<group>";
+		};
 		BF20A0F921386E43005C812E = {
 			isa = PBXGroup;
 			children = (
-				BF1BC8C62139AE5300E02203 /* ImagenesyDescripcion.swift */,
 				BF20A10421386E43005C812E /* pruebavisuales */,
 				BF20A11921386E43005C812E /* pruebavisualesTests */,
 				BF20A12421386E43005C812E /* pruebavisualesUITests */,
@@ -119,13 +153,10 @@
 		BF20A10421386E43005C812E /* pruebavisuales */ = {
 			isa = PBXGroup;
 			children = (
+				BF1BC8CF2139C8D300E02203 /* VC Pantallas */,
+				BF1BC8CE2139C8BC00E02203 /* Datos */,
+				BF1BC8CD2139C8A900E02203 /* NavController */,
 				BF1BC8BF2138DAF500E02203 /* CeldasDECollectionVieweMainVC */,
-				BF20A10521386E43005C812E /* AppDelegate.swift */,
-				BF20A10721386E43005C812E /* ViewController.swift */,
-				BF1BC83F2138836100E02203 /* VCLogIn.swift */,
-				BF1BC8412138840700E02203 /* VCSingUp.swift */,
-				BF1BC8432138A1E000E02203 /* VCMain.swift */,
-				BF20A10921386E43005C812E /* Main.storyboard */,
 				BF20A10C21386E43005C812E /* Assets.xcassets */,
 				BF20A10E21386E43005C812E /* LaunchScreen.storyboard */,
 				BF20A11121386E43005C812E /* Info.plist */,
@@ -290,9 +321,11 @@
 				BF1BC8402138836100E02203 /* VCLogIn.swift in Sources */,
 				BF20A10821386E43005C812E /* ViewController.swift in Sources */,
 				BF1BC8C22138DB1F00E02203 /* CountriesCollectionViewCell.swift in Sources */,
-				BF1BC8C72139AE5300E02203 /* ImagenesyDescripcion.swift in Sources */,
+				BF1BC8C72139AE5300E02203 /* Pais.swift in Sources */,
 				BF1BC8442138A1E000E02203 /* VCMain.swift in Sources */,
 				BF20A10621386E43005C812E /* AppDelegate.swift in Sources */,
+				BF1BC8D32139D1D500E02203 /* VCShowSelection.swift in Sources */,
+				BF1BC8D12139C91700E02203 /* Navcontroller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -459,7 +492,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6JE5PSQ4L9;
+				DEVELOPMENT_TEAM = E6NT6FDC5U;
 				INFOPLIST_FILE = pruebavisuales/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Adriandgzg.pruebavisuales;
@@ -474,7 +507,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6JE5PSQ4L9;
+				DEVELOPMENT_TEAM = E6NT6FDC5U;
 				INFOPLIST_FILE = pruebavisuales/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Adriandgzg.pruebavisuales;

@@ -21,6 +21,8 @@ class VCSingUp: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
+        
     viewvista.layer.cornerRadius = 10
     btncrearcuenta.layer.cornerRadius = 10
     btnfacebook.layer.cornerRadius = 5
@@ -48,7 +50,7 @@ class VCSingUp: UIViewController {
 
    
     @IBAction func btnentrarconfacebook(_ sender: Any) {
-        performSegue(withIdentifier: "signup", sender: self)
+        performSegue(withIdentifier: "signup", sender: nil)
     }
     
 }

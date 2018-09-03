@@ -13,6 +13,7 @@ class CountriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imgCountry: UIImageView!
     @IBOutlet weak var lblDescriptionCountry: UILabel!
     @IBOutlet weak var lblNameCountry: UILabel!
+    @IBOutlet weak var numero: UILabel!
     
     
     override func awakeFromNib() {
