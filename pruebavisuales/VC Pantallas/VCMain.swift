@@ -9,6 +9,7 @@
 import UIKit
 
 class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate {
+    
     @IBOutlet weak var viewContentTitle: UIView!
     
     var celdaseleccionada : Int = 0
@@ -18,8 +19,10 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
          self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
         viewContentTitle.backgroundColor = UIColor.clear
+        
         collectionViewCountries.register(UINib(nibName:nameCell, bundle: nil), forCellWithReuseIdentifier: nameCell)
         
             collectionViewCountries.dataSource = self

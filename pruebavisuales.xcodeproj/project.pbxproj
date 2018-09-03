@@ -22,6 +22,9 @@
 		BF20A11021386E43005C812E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BF20A10E21386E43005C812E /* LaunchScreen.storyboard */; };
 		BF20A11B21386E43005C812E /* pruebavisualesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20A11A21386E43005C812E /* pruebavisualesTests.swift */; };
 		BF20A12621386E43005C812E /* pruebavisualesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20A12521386E43005C812E /* pruebavisualesUITests.swift */; };
+		BFDB38F1213DC6E800112995 /* VCInforCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB38F0213DC6E800112995 /* VCInforCountry.swift */; };
+		BFDB38F4213DDF1B00112995 /* InsideaCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */; };
+		BFDB38F5213DDF1B00112995 /* InsideaCountry.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDB38F3213DDF1B00112995 /* InsideaCountry.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +66,9 @@
 		BF20A12121386E43005C812E /* pruebavisualesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = pruebavisualesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BF20A12521386E43005C812E /* pruebavisualesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pruebavisualesUITests.swift; sourceTree = "<group>"; };
 		BF20A12721386E43005C812E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BFDB38F0213DC6E800112995 /* VCInforCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInforCountry.swift; sourceTree = "<group>"; };
+		BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideaCountry.swift; sourceTree = "<group>"; };
+		BFDB38F3213DDF1B00112995 /* InsideaCountry.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideaCountry.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +101,8 @@
 			children = (
 				BF1BC8C02138DB1F00E02203 /* CountriesCollectionViewCell.swift */,
 				BF1BC8C12138DB1F00E02203 /* CountriesCollectionViewCell.xib */,
+				BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */,
+				BFDB38F3213DDF1B00112995 /* InsideaCountry.xib */,
 			);
 			path = CeldasDECollectionVieweMainVC;
 			sourceTree = "<group>";
@@ -125,6 +133,7 @@
 				BF1BC8412138840700E02203 /* VCSingUp.swift */,
 				BF1BC8432138A1E000E02203 /* VCMain.swift */,
 				BF1BC8D22139D1D500E02203 /* VCShowSelection.swift */,
+				BFDB38F0213DC6E800112995 /* VCInforCountry.swift */,
 				BF20A10921386E43005C812E /* Main.storyboard */,
 			);
 			path = "VC Pantallas";
@@ -291,6 +300,7 @@
 			files = (
 				BF20A11021386E43005C812E /* LaunchScreen.storyboard in Resources */,
 				BF20A10D21386E43005C812E /* Assets.xcassets in Resources */,
+				BFDB38F5213DDF1B00112995 /* InsideaCountry.xib in Resources */,
 				BF20A10B21386E43005C812E /* Main.storyboard in Resources */,
 				BF1BC8C32138DB1F00E02203 /* CountriesCollectionViewCell.xib in Resources */,
 			);
@@ -319,8 +329,10 @@
 			files = (
 				BF1BC8422138840700E02203 /* VCSingUp.swift in Sources */,
 				BF1BC8402138836100E02203 /* VCLogIn.swift in Sources */,
+				BFDB38F1213DC6E800112995 /* VCInforCountry.swift in Sources */,
 				BF20A10821386E43005C812E /* ViewController.swift in Sources */,
 				BF1BC8C22138DB1F00E02203 /* CountriesCollectionViewCell.swift in Sources */,
+				BFDB38F4213DDF1B00112995 /* InsideaCountry.swift in Sources */,
 				BF1BC8C72139AE5300E02203 /* Pais.swift in Sources */,
 				BF1BC8442138A1E000E02203 /* VCMain.swift in Sources */,
 				BF20A10621386E43005C812E /* AppDelegate.swift in Sources */,

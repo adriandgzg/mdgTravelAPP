@@ -39,6 +39,7 @@ class PAIS: NSObject {
         inforpais.append(PAIS(DescripcionPais: "Es una ciudad colonial", NombrePais: "BRASIL", foto: UIImage(named: "brasil")!))
         
         
+        
         inforpais.append(PAIS(DescripcionPais: "Es famosa por sus calles ", NombrePais: "ESPAÑA", foto: UIImage(named: "espana")!))
         
         inforpais.append(PAIS(DescripcionPais: "Los extranjeros viajan a Chiang", NombrePais: "ISLANDIA", foto: UIImage(named: "islandia")!))
