@@ -11,23 +11,26 @@ import UIKit
 class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate {
     
     @IBOutlet weak var viewContentTitle: UIView!
+
     
     var celdaseleccionada : Int = 0
     var otrainfor = PAIS.arraydeinformacion()
     var nameCell = "CountriesCollectionViewCell"
-    @IBOutlet weak var collectionViewCountries: UICollectionView!
+    @IBOutlet weak var collectionViewCountries: UICollectionView!    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
          self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
+        self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         viewContentTitle.backgroundColor = UIColor.clear
         
+        collectionViewCountries.showsHorizontalScrollIndicator = false
         collectionViewCountries.register(UINib(nibName:nameCell, bundle: nil), forCellWithReuseIdentifier: nameCell)
         
             collectionViewCountries.dataSource = self
             collectionViewCountries.delegate = self
-    
+        
         let layout = self.regresaConfiguraciondeELEmentosdelCollection()
         collectionViewCountries.collectionViewLayout = layout
     }
@@ -40,10 +43,13 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
         layout.minimumInteritemSpacing = 0.1
         let size = CGSize(width: collectionViewCountries.frame.size.width - 40, height: collectionViewCountries.frame.size.height)
         layout.itemSize = size
+     
         
         return layout
         
     }
+    
+  
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -51,8 +57,10 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
     }
     //MARK: Implementacionde delegado de Collectionview
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
         return otrainfor.count
     }
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
@@ -64,9 +72,11 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
             cell.imgCountry.contentMode = .scaleAspectFill
             cell.layer.cornerRadius = 10
         
+    
         //aqui nos pide la celda el collection view
         return cell
     }
+ 
     
     //MARK :  Mostrar la celda seleccionada
     

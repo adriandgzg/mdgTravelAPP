@@ -15,7 +15,6 @@ class CountriesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var lblNameCountry: UILabel!
     
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

@@ -25,14 +25,14 @@
                             <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GP9-9I-Gn5">
                                 <rect key="frame" x="0.0" y="0.0" width="348" height="502"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripcion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wZ-KN-Jk6">
-                                <rect key="frame" x="20" y="450" width="312" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Descripcion" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wZ-KN-Jk6">
+                                <rect key="frame" x="20" y="424" width="312" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marruecos" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oW8-wg-NHx">
-                                <rect key="frame" x="20" y="412" width="312" height="30"/>
+                                <rect key="frame" x="20" y="386" width="312" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -45,9 +45,9 @@
                             <constraint firstAttribute="trailing" secondItem="GP9-9I-Gn5" secondAttribute="trailing" id="QwW-Dc-F5g"/>
                             <constraint firstAttribute="bottom" secondItem="GP9-9I-Gn5" secondAttribute="bottom" id="Up1-ji-KHs"/>
                             <constraint firstAttribute="trailing" secondItem="oW8-wg-NHx" secondAttribute="trailing" constant="16" id="X5d-8a-1lt"/>
-                            <constraint firstAttribute="bottom" secondItem="1wZ-KN-Jk6" secondAttribute="bottom" constant="34" id="Xcs-eo-ph7"/>
                             <constraint firstItem="GP9-9I-Gn5" firstAttribute="leading" secondItem="Sth-JW-p6h" secondAttribute="leading" id="dU3-Ja-g04"/>
                             <constraint firstItem="1wZ-KN-Jk6" firstAttribute="leading" secondItem="Sth-JW-p6h" secondAttribute="leading" constant="20" id="gLA-gg-M45"/>
+                            <constraint firstAttribute="bottom" secondItem="1wZ-KN-Jk6" secondAttribute="bottom" constant="60" id="ll5-cX-bDC"/>
                             <constraint firstItem="1wZ-KN-Jk6" firstAttribute="top" secondItem="oW8-wg-NHx" secondAttribute="bottom" constant="8" id="r1h-1j-g09"/>
                             <constraint firstItem="GP9-9I-Gn5" firstAttribute="top" secondItem="Sth-JW-p6h" secondAttribute="top" id="wXR-pv-VTW"/>
                         </constraints>

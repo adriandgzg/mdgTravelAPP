@@ -20,6 +20,7 @@ class VCShowSelection: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
+        self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
 
         imgPaisSelec.image = datosseleccionados?.foto
         lblNamePaisSelec.text = datosseleccionados?.NombrePais
@@ -32,5 +33,20 @@ class VCShowSelection: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    
+    @IBAction func btnshowinfor(_ sender: Any) {
+        self.performSegue ( withIdentifier: "showinfor", sender: datosseleccionados )
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showinfor"{
+            if let datosselecInfor = segue.destination as? VCInforCountry {
+                
+                if let datosenviar = sender as? PAIS {
+                    datosselecInfor.datosarecibir = datosenviar
+                }
+            }
+        }
+    }
 }

@@ -24,6 +24,8 @@ class VCLogIn: UIViewController {
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
         
+
+        
         viewvista.layer.cornerRadius = 10
         btncrearcuenta.layer.cornerRadius = 10
         btnfacebook.layer.cornerRadius = 5
@@ -46,8 +48,7 @@ class VCLogIn: UIViewController {
         imagenizquierda.image = imagenes
         textfiel.leftView = imagenizquierda
         textfiel.leftViewMode = .always
-    }
-    
+    }    
     
     @IBAction func btnentrarconfacebook(_ sender: Any) {
         performSegue(withIdentifier: "login", sender: nil)
