@@ -11,6 +11,11 @@ import UIKit
 class VCTownCities: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UITableViewDelegate, UITableViewDataSource {
    
 
+
+    @IBOutlet var viewpop: UIView!
+    @IBOutlet weak var efect: UIVisualEffectView!
+    var efectopop : UIVisualEffect!
+    
     @IBOutlet weak var lblTitulo: UILabel!
     @IBOutlet weak var ImgImagen: UIImageView!
     @IBOutlet weak var lblDescripcion: UILabel!
@@ -46,7 +51,11 @@ class VCTownCities: UIViewController, UICollectionViewDataSource, UICollectionVi
     CView.delegate = self
     TableView.dataSource = self
     TableView.delegate = self
-  
+        
+        efectopop = efect.effect
+        efect.effect = nil
+        
+        viewpop.layer.cornerRadius = 10
     }
 
     override func didReceiveMemoryWarning() {
@@ -82,6 +91,40 @@ class VCTownCities: UIViewController, UICollectionViewDataSource, UICollectionVi
         cell.TCLlb.text = arrayfotos[indexPath.row].NombrePais
         
         return cell
+    }
+    
+    func animateIn() {
+        self.view.addSubview(viewpop)
+        viewpop.center = self.view.center
+        
+        viewpop.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+        viewpop.alpha = 0
+        
+        UIView.animate(withDuration: 0.4) {
+            self.efect.effect = self.efectopop
+            self.viewpop.alpha = 1
+            self.viewpop.transform = CGAffineTransform.identity
+        }
+        
+    }
+    
+    func animatedOut (){
+        UIView.animate(withDuration: 0.3, animations :{
+            self.viewpop.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.viewpop.alpha = 0
+            
+            self.efect.effect = nil
+        }) {(success: Bool) in
+            self.viewpop.removeFromSuperview()}
+    }
+    
+    @IBAction func dismisspop(_ sender: Any) {
+        animatedOut()
+    }
+  
+    
+    @IBAction func popefect(_ sender: Any) {
+        animateIn()
     }
     
 }
