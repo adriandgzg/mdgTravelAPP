@@ -33,6 +33,8 @@
 		BF29B6B821419DEF00C9E99C /* TVImagen.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29B6B721419DEF00C9E99C /* TVImagen.swift */; };
 		BF29B6BB21419F3000C9E99C /* TVCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29B6B921419F3000C9E99C /* TVCollection.swift */; };
 		BF29B6BC21419F3000C9E99C /* TVCollection.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF29B6BA21419F3000C9E99C /* TVCollection.xib */; };
+		BF29B6BF2141BDCE00C9E99C /* TVCellDos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29B6BD2141BDCE00C9E99C /* TVCellDos.swift */; };
+		BF29B6C02141BDCE00C9E99C /* TVCellDos.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF29B6BE2141BDCE00C9E99C /* TVCellDos.xib */; };
 		BFDB38F1213DC6E800112995 /* VCInforCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB38F0213DC6E800112995 /* VCInforCountry.swift */; };
 		BFDB38F4213DDF1B00112995 /* InsideaCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */; };
 		BFDB38F5213DDF1B00112995 /* InsideaCountry.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDB38F3213DDF1B00112995 /* InsideaCountry.xib */; };
@@ -88,6 +90,8 @@
 		BF29B6B721419DEF00C9E99C /* TVImagen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVImagen.swift; sourceTree = "<group>"; };
 		BF29B6B921419F3000C9E99C /* TVCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCollection.swift; sourceTree = "<group>"; };
 		BF29B6BA21419F3000C9E99C /* TVCollection.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVCollection.xib; sourceTree = "<group>"; };
+		BF29B6BD2141BDCE00C9E99C /* TVCellDos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCellDos.swift; sourceTree = "<group>"; };
+		BF29B6BE2141BDCE00C9E99C /* TVCellDos.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVCellDos.xib; sourceTree = "<group>"; };
 		BFDB38F0213DC6E800112995 /* VCInforCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInforCountry.swift; sourceTree = "<group>"; };
 		BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideaCountry.swift; sourceTree = "<group>"; };
 		BFDB38F3213DDF1B00112995 /* InsideaCountry.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideaCountry.xib; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 				BF29B6BA21419F3000C9E99C /* TVCollection.xib */,
 				BF29B6A2214097E100C9E99C /* TVCell.swift */,
 				BF29B6A3214097E100C9E99C /* TVCell.xib */,
+				BF29B6BD2141BDCE00C9E99C /* TVCellDos.swift */,
+				BF29B6BE2141BDCE00C9E99C /* TVCellDos.xib */,
 			);
 			path = CeldasTableView;
 			sourceTree = "<group>";
@@ -345,6 +351,7 @@
 				BF29B6A5214097E100C9E99C /* TVCell.xib in Resources */,
 				BF20A10B21386E43005C812E /* Main.storyboard in Resources */,
 				BF29B6B421419CA300C9E99C /* TVCellImage.xib in Resources */,
+				BF29B6C02141BDCE00C9E99C /* TVCellDos.xib in Resources */,
 				BF1BC8C32138DB1F00E02203 /* CountriesCollectionViewCell.xib in Resources */,
 				BF29B6A82140BE1D00C9E99C /* GoogleService-Info.plist in Resources */,
 				BF29B6BC21419F3000C9E99C /* TVCollection.xib in Resources */,
@@ -385,6 +392,7 @@
 				BFDB38F4213DDF1B00112995 /* InsideaCountry.swift in Sources */,
 				BF1BC8C72139AE5300E02203 /* Pais.swift in Sources */,
 				BF1BC8442138A1E000E02203 /* VCMain.swift in Sources */,
+				BF29B6BF2141BDCE00C9E99C /* TVCellDos.swift in Sources */,
 				BF20A10621386E43005C812E /* AppDelegate.swift in Sources */,
 				BF1BC8D32139D1D500E02203 /* VCShowSelection.swift in Sources */,
 				BF29B6B821419DEF00C9E99C /* TVImagen.swift in Sources */,

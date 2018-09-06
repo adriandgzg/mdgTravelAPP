@@ -20,8 +20,9 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
         
     TableViewExplore.delegate = self
     TableViewExplore.dataSource = self
-
-
+        
+    TableViewExplore.register(UINib(nibName: "TVCellDos", bundle: nil), forCellReuseIdentifier: "TVCellDos")
+        
         
     }
 
@@ -44,23 +45,23 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        
         if indexPath.section == 0 {
-       TableViewExplore.register(UINib(nibName: "TVCollection", bundle: nil), forCellReuseIdentifier: "TVCollection")
-            let cell = tableView.dequeueReusableCell(withIdentifier: "TVCollection", for: indexPath) as! TVCollection
-            cell.imgCollection.image = UIImage (named: "hombre")
+           let cell = tableView.dequeueReusableCell(withIdentifier: "uno", for: indexPath) as! TVCellDos
+            return cell
+        }
+        else if indexPath.section == 1 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dos", for: indexPath) as! TVCellDos
+            cell.imagendos.image = UIImage(named: "C1")
             return cell
         }
         else {
-            TableViewExplore.register(UINib(nibName: "TVCellImage", bundle: nil), forCellReuseIdentifier: "TVCellImage")
-            let celda = tableView.dequeueReusableCell(withIdentifier: "TVImagen", for: indexPath) as! TVImagen
-            celda.imgTVimagen.image = UIImage (named: "C1")
-             return celda
-        }
-   
+            let cell = tableView.dequeueReusableCell(withIdentifier: "dos", for: indexPath) as! TVCellDos
+            cell.imagendos.image = UIImage(named: "C1")
+            return cell
     }
-
-
-    }
+}
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0{
@@ -69,6 +70,5 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
             return 140.0
         }
     }
-
-
+}
 

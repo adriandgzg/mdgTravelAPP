@@ -119,7 +119,7 @@ class VCTownCities: UIViewController, UICollectionViewDataSource, UICollectionVi
     }*/
     
     @IBAction func dismisspop(_ sender: Any) {
-        //animatedOut()
+       // animatedOut()
     }
   
     

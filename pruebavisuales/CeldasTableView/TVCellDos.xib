@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="uno" rowHeight="88" id="KGk-i7-Jjw" customClass="TVCellDos" customModule="pruebavisuales" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="88"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="87.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wQb-tz-fXe">
+                        <rect key="frame" x="5" y="5" width="310" height="77"/>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="wQb-tz-fXe" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="5" id="JNq-Ub-vJT"/>
+                    <constraint firstAttribute="trailing" secondItem="wQb-tz-fXe" secondAttribute="trailing" constant="5" id="QuR-sP-gE9"/>
+                    <constraint firstAttribute="bottom" secondItem="wQb-tz-fXe" secondAttribute="bottom" constant="5" id="fgA-8E-vLz"/>
+                    <constraint firstItem="wQb-tz-fXe" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="gdP-Qs-NVV"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imagen" destination="wQb-tz-fXe" id="2Qv-4f-PIQ"/>
+                <outlet property="imagendos" destination="PV5-O7-QpJ" id="B2W-rt-V7l"/>
+                <outlet property="lbldos" destination="1mz-L8-CU5" id="srf-dr-mxN"/>
+            </connections>
+            <point key="canvasLocation" x="35" y="50"/>
+        </tableViewCell>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Dos" rowHeight="141" id="hvB-Vi-QA3" customClass="TVImagen" customModule="pruebavisuales" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="317" height="141"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hvB-Vi-QA3" id="MoJ-e8-LnJ">
+                <rect key="frame" x="0.0" y="0.0" width="317" height="140.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PV5-O7-QpJ">
+                        <rect key="frame" x="0.0" y="0.0" width="317" height="140.5"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mz-L8-CU5">
+                        <rect key="frame" x="16" y="109" width="285" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="PV5-O7-QpJ" firstAttribute="leading" secondItem="MoJ-e8-LnJ" secondAttribute="leading" id="1xR-j6-mmU"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="1mz-L8-CU5" secondAttribute="bottom" id="8rb-f4-jQ4"/>
+                    <constraint firstItem="1mz-L8-CU5" firstAttribute="leading" secondItem="MoJ-e8-LnJ" secondAttribute="leadingMargin" id="Mx3-pc-oVj"/>
+                    <constraint firstAttribute="bottom" secondItem="PV5-O7-QpJ" secondAttribute="bottom" id="ml6-ef-6t3"/>
+                    <constraint firstItem="PV5-O7-QpJ" firstAttribute="top" secondItem="MoJ-e8-LnJ" secondAttribute="top" id="o8S-id-Mzq"/>
+                    <constraint firstAttribute="trailing" secondItem="PV5-O7-QpJ" secondAttribute="trailing" id="rjL-OZ-2fZ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="1mz-L8-CU5" secondAttribute="trailing" id="sH2-tl-N5J"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="Vmd-Ag-b0w"/>
+            <connections>
+                <outlet property="imgTVimagen" destination="PV5-O7-QpJ" id="PxQ-7Z-mVD"/>
+                <outlet property="lblTVimagen" destination="1mz-L8-CU5" id="dfh-ue-g0E"/>
+            </connections>
+            <point key="canvasLocation" x="36" y="245"/>
+        </tableViewCell>
+    </objects>
+</document>
