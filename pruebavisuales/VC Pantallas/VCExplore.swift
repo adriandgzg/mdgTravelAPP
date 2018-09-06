@@ -21,6 +21,8 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
     TableViewExplore.delegate = self
     TableViewExplore.dataSource = self
 
+
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,8 +44,19 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-      
-    
+        if indexPath.section == 0 {
+       TableViewExplore.register(UINib(nibName: "TVCollection", bundle: nil), forCellReuseIdentifier: "TVCollection")
+            let cell = tableView.dequeueReusableCell(withIdentifier: "TVCollection", for: indexPath) as! TVCollection
+            cell.imgCollection.image = UIImage (named: "hombre")
+            return cell
+        }
+        else {
+            TableViewExplore.register(UINib(nibName: "TVCellImage", bundle: nil), forCellReuseIdentifier: "TVCellImage")
+            let celda = tableView.dequeueReusableCell(withIdentifier: "TVImagen", for: indexPath) as! TVImagen
+            celda.imgTVimagen.image = UIImage (named: "C1")
+             return celda
+        }
+   
     }
 
 

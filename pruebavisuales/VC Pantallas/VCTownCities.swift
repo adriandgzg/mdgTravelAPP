@@ -52,10 +52,10 @@ class VCTownCities: UIViewController, UICollectionViewDataSource, UICollectionVi
     TableView.dataSource = self
     TableView.delegate = self
         
-        efectopop = efect.effect
-        efect.effect = nil
+        //efectopop = efect.effect
+        //efect.effect = nil
         
-        viewpop.layer.cornerRadius = 10
+        //viewpop.layer.cornerRadius = 10
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,7 +93,7 @@ class VCTownCities: UIViewController, UICollectionViewDataSource, UICollectionVi
         return cell
     }
     
-    func animateIn() {
+    /*func animateIn() {
         self.view.addSubview(viewpop)
         viewpop.center = self.view.center
         
@@ -116,15 +116,15 @@ class VCTownCities: UIViewController, UICollectionViewDataSource, UICollectionVi
             self.efect.effect = nil
         }) {(success: Bool) in
             self.viewpop.removeFromSuperview()}
-    }
+    }*/
     
     @IBAction func dismisspop(_ sender: Any) {
-        animatedOut()
+        //animatedOut()
     }
   
     
     @IBAction func popefect(_ sender: Any) {
-        animateIn()
+        //animateIn()
     }
     
 }
