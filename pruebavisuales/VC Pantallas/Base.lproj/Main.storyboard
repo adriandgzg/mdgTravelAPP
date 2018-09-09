@@ -836,6 +836,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CTl-5t-WFb">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -854,7 +855,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXD-SR-K4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4342" y="637"/>
+            <point key="canvasLocation" x="4341.6000000000004" y="636.4317841079461"/>
         </scene>
         <!--Log In-->
         <scene sceneID="i1f-hg-9lW">
@@ -946,7 +947,7 @@
                                             <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="cxG-TN-Ik4" kind="show" identifier="login" id="Xgv-d1-j2N"/>
+                                            <action selector="btnCrearcuenta:" destination="za2-ud-p0S" eventType="touchUpInside" id="EAH-XX-N1J"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -985,11 +986,12 @@
                         <viewLayoutGuide key="safeArea" id="Sem-kw-XFG"/>
                     </view>
                     <connections>
-                        <outlet property="btncrearcuenta" destination="fvS-Gu-DUT" id="8rS-J3-r7g"/>
+                        <outlet property="btncrearcuenta" destination="fvS-Gu-DUT" id="gPC-a2-SB8"/>
                         <outlet property="btnfacebook" destination="5e8-1Q-JYR" id="Tz6-y4-iYZ"/>
                         <outlet property="txtpassword" destination="oxr-K0-eBy" id="PNw-Qn-3V1"/>
                         <outlet property="txtusername" destination="zv2-uh-J8c" id="KdY-xa-qP8"/>
                         <outlet property="viewvista" destination="Dr8-Ib-1Pv" id="9gu-xN-jIV"/>
+                        <segue destination="cxG-TN-Ik4" kind="showDetail" identifier="login" id="yLV-Cf-ZmU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9j5-Me-kZE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1181,6 +1183,6 @@
         <image name="suecia" width="1260" height="709"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="IkV-aE-VBM"/>
+        <segue reference="yLV-Cf-ZmU"/>
     </inferredMetricsTieBreakers>
 </document>

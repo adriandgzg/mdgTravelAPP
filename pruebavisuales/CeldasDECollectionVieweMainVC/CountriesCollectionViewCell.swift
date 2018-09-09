@@ -9,6 +9,7 @@
 import UIKit
 
 class CountriesCollectionViewCell: UICollectionViewCell {
+    
     @IBOutlet weak var viewPrincipal: UIView!
     @IBOutlet weak var imgCountry: UIImageView!
     @IBOutlet weak var lblDescriptionCountry: UILabel!

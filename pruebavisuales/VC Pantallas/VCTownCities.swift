@@ -44,8 +44,9 @@ class VCTownCities: UIViewController, UICollectionViewDataSource, UICollectionVi
         
     CView.showsHorizontalScrollIndicator = false
     CView.register(UINib(nibName: namecellCollection, bundle: nil), forCellWithReuseIdentifier: namecellCollection)
+    
     TableView.register(UINib(nibName: "TVCell", bundle: nil), forCellReuseIdentifier: "TVCell")
-
+    
         
     CView.dataSource = self
     CView.delegate = self

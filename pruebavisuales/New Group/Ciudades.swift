@@ -44,37 +44,84 @@ class Ciudades : NSObject {
         }
     }
 
-
-func arrayCiudades () -> [Lugar] {
-    let inforciudades : [Lugar] = []
-
-    let mexico = Lugar()
-    mexico.titulo = "MÉXICO"
-    mexico.imgPlace = "https://hempmeds.mx/wp-content/uploads/Mexico-Banner.jpg"
-
-    let CostaRica = Lugar()
-    CostaRica.titulo = "COSTA RICA"
-    CostaRica.imgPlace = "https://static3lonelyplanetes.cdnstatics.com/sites/default/files/styles/max_1300x1300/public/811_1_volcanes-costa-rica.jpg?itok=RJTigqvT"
-
+    //Crear una variable con la URL dada
+    func obtendatos(){
+        
+    let urlString : String = "https://api.myjson.com/bins/mwvh0=json"
     
-    let carrousel1 :itemCarrousel = itemCarrousel()
-    carrousel1.titulo = "En America"
-    carrousel1.arrLugares = [mexico, CostaRica]
+    //Comprueba la condicion y (solo si es falso), se ejecuta la condicion
+    guard let url = URL(string: urlString) else { return }
+        
+    /*
+         Crea una tarea que recupera el contenido de una URL especificada y lo pone en una variable data. llama a un controlador al finalizar.
+         
+         func dataTask(with: URL, completionHandler: (Data?, URLResponse?, Error?)
+ */
+        URLSession.shared.dataTask(with: url) {(data,_ , err) in
+            DispatchQueue.main.async {
+            if err != nil {
+                print("fallo al obtener datos de la url")
+                return
+            }
+            
+           //contenido de URL en la variable data
+                guard let data = data else { return }
+            
+/* En do intenta deserealizar, sí puede, la información se queda en resultJason.
+Se le asigna el dato a result2, que es un tipo Diccionario
+este recibe: un String y otro tipo cualquiera de dato
+*/
+            do{
+                let resultJson = try JSONSerialization.jsonObject(with: data)
+                let result2 : Dictionary = resultJson as! Dictionary<String,Any?>
+               consumeLugares(dictionary: result2)
+                
+            }catch let jsonErr{
+                print("Fallo al decodificar jsonErr: \(jsonErr)")
+                    }
+                }
+            }.resume()
+        
+        /*Funcion que recibe un tipo de informacion que es un diccionario, esa informacion se le asigna arriba en
+        consumeLugares(dictionary: result2)*/
 
-    let Italia = Lugar()
-    Italia.titulo = "Italia"
-    Italia.imgPlace = "https://d2ecnxuc66vxfr.cloudfront.net/blog/wp-content/uploads/2017/02/lugares-turisticos-de-italia.png"
-
-    let Rusia = Lugar()
-    Rusia.titulo = "Rusia"
-    Rusia.imgPlace = "https://assets.trome.pe/files/ec_article_multimedia_gallery/uploads/2017/11/19/5a12273c3a1ec.jpeg"
-
-    let carrousel2 :itemCarrousel = itemCarrousel()
-    carrousel2.titulo = "En Europa"
-    carrousel2.arrLugares = [Italia, Rusia]
-
-    return inforciudades
-    
+        func consumeLugares(dictionary : Dictionary <String,Any?>)
+        {
+            let ciudad = Ciudades ()
+            
+            for item in dictionary["arrCarrousel"] as! [Dictionary<String,Any?>]
+            {
+                let itemcarrusel1 = itemCarrousel ()
+                itemcarrusel1.titulo = item["titulo"] as! String
+                print(itemcarrusel1.titulo)
+                
+                for item2 in item["lugares"] as! [Dictionary<String,Any?>]
+                {
+                    let lugaresfinales = Lugar ()
+                    lugaresfinales.titulo = item2["tituloLugar"] as! String
+                    lugaresfinales.imgPlace = item2["imgPlace"] as! String
+                
+                    itemcarrusel1.arrLugares.append(lugaresfinales)
+                }
+                
+                for item3 in item["lugares"] as! [Dictionary<String,Any?>]
+                {
+                    let lugaresfeatures = Lugar ()
+                    lugaresfeatures.titulo = item3["tituloLugar"] as! String
+                    lugaresfeatures.imgPlace = item3["imgPlace"] as! String
+                    
+                    ciudad.arrFeatures .append(lugaresfeatures)
+                }
+                
+                ciudad.arrCarruseles.append(itemcarrusel1)
+            }
+        }
+   
 }
+    
+
+
+
+
 
 

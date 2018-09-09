@@ -1,17 +1,18 @@
 //
-//  TVCollection.swift
+//  TableViewCell2.swift
 //  pruebavisuales
 //
-//  Created by Adrian Pascual Dominguez on 06/09/18.
+//  Created by Adrian Pascual Dominguez on 07/09/18.
 //  Copyright © 2018 Adrian Pascual Dominguez. All rights reserved.
 //
 
 import UIKit
 
-class TVCollection: UITableViewCell {
+class TableViewCell2: UITableViewCell {
 
     
-    @IBOutlet weak var imgCollection: UIImageView!
+    @IBOutlet weak var imagen2: UIImageView!
+    @IBOutlet weak var lbl2: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

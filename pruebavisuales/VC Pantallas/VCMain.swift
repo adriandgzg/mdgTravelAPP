@@ -16,6 +16,7 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
     var celdaseleccionada : Int = 0
     var otrainfor = PAIS.arraydeinformacion()
     var nameCell = "CountriesCollectionViewCell"
+    
     @IBOutlet weak var collectionViewCountries: UICollectionView!    
     
     override func viewDidLoad() {
@@ -73,7 +74,7 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
             cell.layer.cornerRadius = 10
         
     
-        //aqui nos pide la celda el collection view
+        //aqui nos pide la celda del collection view
         return cell
     }
  

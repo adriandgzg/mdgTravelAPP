@@ -7,24 +7,21 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class VCLogIn: UIViewController {
     @IBOutlet weak var txtusername: UITextField!
     @IBOutlet weak var txtpassword: UITextField!
     @IBOutlet weak var viewvista: UIView!
+
+    
     @IBOutlet weak var btncrearcuenta: UIButton!
     @IBOutlet weak var btnfacebook: UIButton!
     
-    
-    override func
-        
-        
-        viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
-        
-
         
         viewvista.layer.cornerRadius = 10
         btncrearcuenta.layer.cornerRadius = 10
@@ -48,10 +45,16 @@ class VCLogIn: UIViewController {
         imagenizquierda.image = imagenes
         textfiel.leftView = imagenizquierda
         textfiel.leftViewMode = .always
-    }    
+    }
+    
     
     @IBAction func btnentrarconfacebook(_ sender: Any) {
         performSegue(withIdentifier: "login", sender: nil)
     }
+    
+    @IBAction func btnCrearcuenta(_ sender: Any) {
+        Auth.auth().createUser(withEmail: txtusername.text!, password: txtpassword.text!){user , error in}
+    }
+    
     
 }

@@ -10,19 +10,24 @@ import UIKit
 
 class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
   
+    
+    
 
     var ejemplo = Lugar1 ()
     @IBOutlet weak var TableViewExplore: UITableView!
-
+    
+    var collectionnombrecelda = "TableViewCell"
+    var nombreimagen = "TableViewCell2"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
     TableViewExplore.delegate = self
     TableViewExplore.dataSource = self
+    
+    TableViewExplore.register(UINib(nibName: collectionnombrecelda, bundle: nil), forCellReuseIdentifier: collectionnombrecelda )
         
-    TableViewExplore.register(UINib(nibName: "TVCellDos", bundle: nil), forCellReuseIdentifier: "TVCellDos")
-        
+    TableViewExplore.register(UINib(nibName: nombreimagen, bundle: nil), forCellReuseIdentifier: nombreimagen )
         
     }
 
@@ -36,11 +41,12 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0 {
-            return 5
+        
+         if section == 0 {
+            return 2
         }
         else {
-            return 2
+            return 3
         }
     }
     
@@ -48,19 +54,21 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
         
         if indexPath.section == 0 {
-           let cell = tableView.dequeueReusableCell(withIdentifier: "uno", for: indexPath) as! TVCellDos
+            
+            let cell  = tableView.dequeueReusableCell(withIdentifier: collectionnombrecelda) as! TableViewCell
+            cell.esteeseltexto.text = "untexto"
+            
             return cell
         }
-        else if indexPath.section == 1 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "dos", for: indexPath) as! TVCellDos
-            cell.imagendos.image = UIImage(named: "C1")
-            return cell
+            
+        else  {
+        
+            let celda = tableView.dequeueReusableCell(withIdentifier: nombreimagen) as! TableViewCell2
+            celda.lbl2.text = "Este es el texto"
+            
+            return celda
         }
-        else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "dos", for: indexPath) as! TVCellDos
-            cell.imagendos.image = UIImage(named: "C1")
-            return cell
-    }
+    
 }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -69,6 +77,10 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
         }else{
             return 140.0
         }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 10
     }
 }
 

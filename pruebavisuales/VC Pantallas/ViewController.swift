@@ -6,12 +6,15 @@
 //  Copyright © 2018 Adrian Pascual Dominguez. All rights reserved.
 //
 
+
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
     
     
     @IBOutlet weak var btnLogIn: UIButton!
+    
     @IBOutlet weak var btnSingUp: UIButton!
     
     override func viewDidLoad() {
