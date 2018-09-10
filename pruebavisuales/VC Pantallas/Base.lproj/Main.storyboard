@@ -834,18 +834,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CTl-5t-WFb">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="CTl-5t-WFb" firstAttribute="top" secondItem="G81-Ho-4Ol" secondAttribute="top" id="5zI-Ib-Bsm"/>
-                            <constraint firstItem="CTl-5t-WFb" firstAttribute="leading" secondItem="kqt-jf-bwP" secondAttribute="leading" id="WAe-bs-sow"/>
-                            <constraint firstItem="CTl-5t-WFb" firstAttribute="bottom" secondItem="kqt-jf-bwP" secondAttribute="bottom" id="hwH-Bk-wBa"/>
-                            <constraint firstItem="CTl-5t-WFb" firstAttribute="trailing" secondItem="kqt-jf-bwP" secondAttribute="trailing" id="kjx-0W-VoG"/>
-                            <constraint firstItem="CTl-5t-WFb" firstAttribute="top" secondItem="G81-Ho-4Ol" secondAttribute="top" id="pkq-aL-8FL"/>
+                            <constraint firstItem="CTl-5t-WFb" firstAttribute="bottom" secondItem="kqt-jf-bwP" secondAttribute="bottom" id="ATk-UZ-teH"/>
+                            <constraint firstItem="CTl-5t-WFb" firstAttribute="top" secondItem="kqt-jf-bwP" secondAttribute="top" constant="94" id="KrH-ry-p00"/>
+                            <constraint firstAttribute="trailing" secondItem="CTl-5t-WFb" secondAttribute="trailing" id="TUh-GR-2S2"/>
+                            <constraint firstItem="CTl-5t-WFb" firstAttribute="leading" secondItem="G81-Ho-4Ol" secondAttribute="leading" id="q0U-ce-qcj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kqt-jf-bwP"/>
                     </view>

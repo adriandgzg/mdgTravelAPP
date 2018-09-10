@@ -110,7 +110,7 @@ este recibe: un String y otro tipo cualquiera de dato
                     lugaresfeatures.titulo = item3["tituloLugar"] as! String
                     lugaresfeatures.imgPlace = item3["imgPlace"] as! String
                     
-                    ciudad.arrFeatures .append(lugaresfeatures)
+                    ciudad.arrFeatures.append(lugaresfeatures)
                 }
                 
                 ciudad.arrCarruseles.append(itemcarrusel1)

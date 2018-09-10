@@ -10,9 +10,7 @@ import UIKit
 
 class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
   
-    
-    
-
+    var datos = PAIS.arraydeinformacion()
     var ejemplo = Lugar1 ()
     @IBOutlet weak var TableViewExplore: UITableView!
     
@@ -46,7 +44,8 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
             return 2
         }
         else {
-            return 3
+            
+            return datos.count
         }
     }
     
@@ -56,16 +55,15 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
         if indexPath.section == 0 {
             
             let cell  = tableView.dequeueReusableCell(withIdentifier: collectionnombrecelda) as! TableViewCell
-            cell.esteeseltexto.text = "untexto"
-            
+            cell.esteeseltexto.text =  "Título"
             return cell
         }
             
         else  {
         
             let celda = tableView.dequeueReusableCell(withIdentifier: nombreimagen) as! TableViewCell2
-            celda.lbl2.text = "Este es el texto"
-            
+            celda.lbl2.text = datos[indexPath.row].NombrePais
+            celda.imagen2.image = datos[indexPath.row].foto
             return celda
         }
     
@@ -73,14 +71,16 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0{
-            return 120.0
+            return 220.0
         }else{
-            return 140.0
+            return 150.0
         }
     }
     
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return 10
+        return 20
     }
+    
+    
 }
 
