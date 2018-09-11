@@ -8,25 +8,39 @@
 
 import UIKit
 
-class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
-  
-    var datos = PAIS.arraydeinformacion()
-    var ejemplo = Lugar1 ()
+class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, carrouselItemDelegate, finishLoadDataDelegate {
+
+    
+   
+    var selectCelda = 0
+    var ciudades: Ciudades?
+    
     @IBOutlet weak var TableViewExplore: UITableView!
     
-    var collectionnombrecelda = "TableViewCell"
-    var nombreimagen = "TableViewCell2"
+    @IBOutlet weak var searchbar: UISearchBar!
+    
+    var collectionnombrecelda = "TVCellDelCarrousel"
+    var nombreimagen = "TVCelldeImagenes"
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+    ciudades = Ciudades()
+    ciudades?.obtendatos()
+    ciudades?.delegate = self
+        
+    self.title = "Explore"
+        
     TableViewExplore.delegate = self
     TableViewExplore.dataSource = self
+    searchbar.delegate = self
     
     TableViewExplore.register(UINib(nibName: collectionnombrecelda, bundle: nil), forCellReuseIdentifier: collectionnombrecelda )
         
     TableViewExplore.register(UINib(nibName: nombreimagen, bundle: nil), forCellReuseIdentifier: nombreimagen )
-        
+    
+      
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,39 +53,41 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-         if section == 0 {
-            return 2
+            if section == 0 {
+                return (ciudades?.arrCarruseles.count)!
+            }
+            else {
+                
+                return (ciudades?.arrFeatures.count)!
         }
-        else {
-            
-            return datos.count
-        }
+    
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        
-        if indexPath.section == 0 {
             
-            let cell  = tableView.dequeueReusableCell(withIdentifier: collectionnombrecelda) as! TableViewCell
-            cell.esteeseltexto.text =  "Título"
-            return cell
-        }
+            if indexPath.section == 0 {
+                let cell  = tableView.dequeueReusableCell(withIdentifier: collectionnombrecelda) as! TVCellDelCarrousel
+               cell.DelegateClick = self
+            cell.arrDatosDelCarrusel = ciudades?.arrCarruseles[indexPath.row]
+                cell.selectionStyle = .none
+                return cell
+            }
             
-        else  {
+            
+            else  {
+                
+                let celda = tableView.dequeueReusableCell(withIdentifier: nombreimagen) as! TVCelldeImagenes
+                celda.lbl2.text =  ciudades?.arrFeatures[indexPath.row].titulo
+                cargaImagenFromUrl(uiImage: celda.imagen2 , UrlImage: (ciudades?.arrFeatures[indexPath.row].imgPlace)!)
+                celda.selectionStyle = .none
+                return celda
+            }
         
-            let celda = tableView.dequeueReusableCell(withIdentifier: nombreimagen) as! TableViewCell2
-            celda.lbl2.text = datos[indexPath.row].NombrePais
-            celda.imagen2.image = datos[indexPath.row].foto
-            return celda
-        }
-    
 }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0{
-            return 220.0
+            return 170.0
         }else{
             return 150.0
         }
@@ -82,5 +98,63 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource{
     }
     
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 1 {
+        selectCelda = indexPath.row
+        let datosselectCelda = ciudades?.arrFeatures[selectCelda]
+            
+        print(datosselectCelda?.titulo)
+        }
+        
+    }
+    
+    func ClickItemCarrousel(placetoClick: Lugar) {
+        print ( placetoClick )
+    }
+    
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        
+        if section == 1 {
+            
+            return "Featured"
+        }
+        else {
+            
+            return nil
+        }
 }
+    
+    func cargaImagenFromUrl(uiImage: UIImageView, UrlImage : String){
+        
+        let url = URL(string: UrlImage)
+        
+        URLSession.shared.dataTask(with: url!, completionHandler: {(Data,_ , err) in
+            
+            if err != nil {
+                print("Error al obtener los datos de la imagen: " + err.debugDescription)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                uiImage.image = UIImage(data: Data!)!
+            }
+            
+        }).resume()
+        
+    }
+    
+    func cargaFinal(ciudades: Ciudades) {
+        self.ciudades = ciudades
+        self.TableViewExplore.reloadData()
+    }
+ 
 
+    
+    
+    
+    //UISearchBar
+    
+    //ejemplo SearchBar
+}

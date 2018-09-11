@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CollectionViewCell: UICollectionViewCell {
+class CVCellDeCarrousel: UICollectionViewCell {
 
     
     @IBOutlet weak var imgcelda: UIImageView!

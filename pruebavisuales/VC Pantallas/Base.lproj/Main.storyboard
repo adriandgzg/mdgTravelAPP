@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4oS-Tg-QWz">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hcr-5h-C5d">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -643,6 +643,7 @@
                                                         <state key="normal" title="Button" image="gris"/>
                                                         <connections>
                                                             <action selector="popefect:" destination="nkU-LH-m5y" eventType="touchUpInside" id="eDG-Um-SOH"/>
+                                                            <segue destination="4oS-Tg-QWz" kind="show" id="ypA-qa-U9F"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -830,31 +831,39 @@
             <objects>
                 <viewController id="4oS-Tg-QWz" customClass="VCExplore" customModule="pruebavisuales" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="G81-Ho-4Ol">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="623"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CTl-5t-WFb">
-                                <rect key="frame" x="0.0" y="114" width="375" height="553"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="503"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <sections/>
                             </tableView>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="XJY-hP-tdj">
+                                <rect key="frame" x="0.0" y="64" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="CTl-5t-WFb" firstAttribute="bottom" secondItem="kqt-jf-bwP" secondAttribute="bottom" id="ATk-UZ-teH"/>
-                            <constraint firstItem="CTl-5t-WFb" firstAttribute="top" secondItem="kqt-jf-bwP" secondAttribute="top" constant="94" id="KrH-ry-p00"/>
                             <constraint firstAttribute="trailing" secondItem="CTl-5t-WFb" secondAttribute="trailing" id="TUh-GR-2S2"/>
+                            <constraint firstItem="XJY-hP-tdj" firstAttribute="trailing" secondItem="kqt-jf-bwP" secondAttribute="trailing" id="VDH-1h-7xo"/>
+                            <constraint firstItem="XJY-hP-tdj" firstAttribute="top" secondItem="kqt-jf-bwP" secondAttribute="top" id="bl6-MC-Mbc"/>
+                            <constraint firstItem="XJY-hP-tdj" firstAttribute="leading" secondItem="kqt-jf-bwP" secondAttribute="leading" id="iYz-u9-vmH"/>
                             <constraint firstItem="CTl-5t-WFb" firstAttribute="leading" secondItem="G81-Ho-4Ol" secondAttribute="leading" id="q0U-ce-qcj"/>
+                            <constraint firstItem="CTl-5t-WFb" firstAttribute="top" secondItem="XJY-hP-tdj" secondAttribute="bottom" id="qdg-4W-8KM"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kqt-jf-bwP"/>
                     </view>
                     <connections>
                         <outlet property="TableViewExplore" destination="CTl-5t-WFb" id="Npb-QQ-2r8"/>
+                        <outlet property="searchbar" destination="XJY-hP-tdj" id="aIj-PA-ZMR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gXD-SR-K4j" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4341.6000000000004" y="636.4317841079461"/>
+            <point key="canvasLocation" x="4050" y="753"/>
         </scene>
         <!--Log In-->
         <scene sceneID="i1f-hg-9lW">
@@ -1182,6 +1191,6 @@
         <image name="suecia" width="1260" height="709"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="yLV-Cf-ZmU"/>
+        <segue reference="IkV-aE-VBM"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -8,10 +8,11 @@
 
 import UIKit
 
-class TableViewCell: UITableViewCell, UICollectionViewDelegate , UICollectionViewDataSource{
+class TVCellDelCarrousel: UITableViewCell, UICollectionViewDelegate , UICollectionViewDataSource{
     
+    var DelegateClick : carrouselItemDelegate?
     var selectCelda = 0
-    var datos2 = PAIS.arraydeinformacion()
+    var arrDatosDelCarrusel: itemCarrousel?
     @IBOutlet weak var mycollection: UICollectionView!
     @IBOutlet weak var esteeseltexto: UILabel!
 
@@ -21,12 +22,12 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate , UICollectionVie
         self.mycollection.delegate = self
         self.mycollection.dataSource = self
         
-        self.mycollection.register(UINib(nibName:"CollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CollectionViewCell")
+        self.mycollection.register(UINib(nibName:"CVCellDeCarrousel", bundle: nil), forCellWithReuseIdentifier: "CVCellDeCarrousel")
         
         let layout = self.regresaConfiguraciondeELEmentosdelCollection()
         mycollection.collectionViewLayout = layout
         mycollection.showsHorizontalScrollIndicator = false
-        
+        self.textLabel?.text = arrDatosDelCarrusel?.titulo
     }
 
     func regresaConfiguraciondeELEmentosdelCollection()-> UICollectionViewLayout{
@@ -51,14 +52,14 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate , UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return datos2.count
+        return (arrDatosDelCarrusel?.arrLugares.count)!
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell : CollectionViewCell = mycollection.dequeueReusableCell(withReuseIdentifier: "CollectionViewCell", for: indexPath) as! CollectionViewCell
+        let cell : CVCellDeCarrousel = mycollection.dequeueReusableCell(withReuseIdentifier: "CVCellDeCarrousel", for: indexPath) as! CVCellDeCarrousel
         
-        cell.lblcelda.text = datos2[indexPath.row].NombrePais
-        cell.imgcelda.image = datos2[indexPath.row].foto
+        cell.lblcelda.text = arrDatosDelCarrusel?.arrLugares[indexPath.row].titulo
+        cargaImagenFromUrl(uiImage: cell.imgcelda , UrlImage: (arrDatosDelCarrusel?.arrLugares[indexPath.row].imgPlace)!)
        
         return cell
     }
@@ -66,8 +67,28 @@ class TableViewCell: UITableViewCell, UICollectionViewDelegate , UICollectionVie
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         
         selectCelda = indexPath.row
-       let datosselectCelda = datos2[selectCelda]
-        print(datosselectCelda.NombrePais)
+        let datosselectCelda = arrDatosDelCarrusel?.arrLugares[selectCelda]
+        DelegateClick?.ClickItemCarrousel(placetoClick: datosselectCelda!)
+        print(datosselectCelda?.titulo)
     }
     
+    
+    func cargaImagenFromUrl(uiImage: UIImageView, UrlImage : String){
+        
+        let url = URL(string: UrlImage)
+        
+        URLSession.shared.dataTask(with: url!, completionHandler: {(Data,_ , err) in
+            
+            if err != nil {
+                print("Error al obtener los datos de la imagen: " + err.debugDescription)
+                return
+            }
+            
+            DispatchQueue.main.async {
+                uiImage.image = UIImage(data: Data!)!
+            }
+            
+        }).resume()
+        
+    }
 }

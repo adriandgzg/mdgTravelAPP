@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TableViewCell2: UITableViewCell {
+class TVCelldeImagenes: UITableViewCell {
 
     
     @IBOutlet weak var imagen2: UIImageView!

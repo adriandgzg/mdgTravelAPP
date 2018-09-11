@@ -23,13 +23,14 @@ class VCLogIn: UIViewController {
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
         
+
         viewvista.layer.cornerRadius = 10
         btncrearcuenta.layer.cornerRadius = 10
         btnfacebook.layer.cornerRadius = 5
         
         imagenalaizquierda(textfiel: txtusername, imagenes: #imageLiteral(resourceName: "images"))
         imagenalaizquierda(textfiel: txtpassword, imagenes: #imageLiteral(resourceName: "images"))
-
+        
         // Do any additional setup after loading the view.
     }
 
