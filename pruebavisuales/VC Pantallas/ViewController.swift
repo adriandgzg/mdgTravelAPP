@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var btnSingUp: UIButton!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,15 +28,24 @@ class ViewController: UIViewController {
         
         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
         self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-
+        }
         
-    }
+    
+  /*  override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        if Auth.auth().currentUser != nil {
+            self.performSegue(withIdentifier: "VCInitial", sender: nil)
+        }
+    } */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
-
+  
+    
+    
+    
 }
 

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class VCInforCountry: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate
 {
@@ -22,11 +23,13 @@ class VCInforCountry: UIViewController, UICollectionViewDataSource, UICollection
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
+        self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
         lblNombre.text = datosarecibir?.NombrePais
         lblDescripcion.text = datosarecibir?.DescripcionPais
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
-        self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
         
      CountryinsidecollectionView.showsHorizontalScrollIndicator = false
         

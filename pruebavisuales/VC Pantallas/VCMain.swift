@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDelegate {
     
@@ -22,8 +23,9 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
         self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
         viewContentTitle.backgroundColor = UIColor.clear
         
         collectionViewCountries.showsHorizontalScrollIndicator = false
@@ -98,6 +100,30 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
             }
         }
     }
+    
+    
+    
+    @IBAction func btnLogOut(_ sender: Any) {
+        
+        do {
+            try Auth.auth().signOut()
+        }
+        catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+        
+        let storyboard = UIStoryboard(name: "ViewController", bundle: nil)
+        let initial = storyboard.instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = initial
+    }
+    
+ 
+
+    
+    
+    
+    
+    
 }
  
 

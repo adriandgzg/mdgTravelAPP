@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, carrouselItemDelegate, finishLoadDataDelegate {
 
@@ -26,6 +27,10 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
+    self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
     ciudades = Ciudades()
     ciudades?.obtendatos()
     ciudades?.delegate = self
@@ -104,7 +109,7 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         selectCelda = indexPath.row
         let datosselectCelda = ciudades?.arrFeatures[selectCelda]
             
-        print(datosselectCelda?.titulo)
+       // print(datosselectCelda?.titulo)
         }
         
     }

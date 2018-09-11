@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class VCShowSelection: UIViewController {
 
@@ -19,8 +20,8 @@ class VCShowSelection: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
-        self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+      self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
+       self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
 
         imgPaisSelec.image = datosseleccionados?.foto
         lblNamePaisSelec.text = datosseleccionados?.NombrePais

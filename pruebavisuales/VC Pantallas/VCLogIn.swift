@@ -18,6 +18,14 @@ class VCLogIn: UIViewController {
     @IBOutlet weak var btncrearcuenta: UIButton!
     @IBOutlet weak var btnfacebook: UIButton!
     
+    
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        txtusername.text = nil
+        txtpassword.text = nil
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +37,7 @@ class VCLogIn: UIViewController {
         btnfacebook.layer.cornerRadius = 5
         
         imagenalaizquierda(textfiel: txtusername, imagenes: #imageLiteral(resourceName: "images"))
-        imagenalaizquierda(textfiel: txtpassword, imagenes: #imageLiteral(resourceName: "images"))
+        imagenalaizquierda(textfiel: txtpassword, imagenes: #imageLiteral(resourceName: "cand"))
         
         // Do any additional setup after loading the view.
     }
@@ -50,12 +58,41 @@ class VCLogIn: UIViewController {
     
     
     @IBAction func btnentrarconfacebook(_ sender: Any) {
-        performSegue(withIdentifier: "login", sender: nil)
+       // performSegue(withIdentifier: "login", sender: nil)
     }
     
     @IBAction func btnCrearcuenta(_ sender: Any) {
-        Auth.auth().createUser(withEmail: txtusername.text!, password: txtpassword.text!){user , error in}
+
+        if self.txtusername.text == "" || self.txtpassword.text == "" {
+            let alertController = UIAlertController(title: "Error", message: "Por favor introduce email y contraseña", preferredStyle: .alert)
+            
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+            alertController.addAction(defaultAction)
+            
+            self.present(alertController, animated: true, completion: nil)
+            
+        } else {
+            //2.
+            Auth.auth().signIn(withEmail: self.txtusername.text!, password: self.txtpassword.text!) { (user, error) in
+                //3.
+            if error == nil {
+            self.performSegue(withIdentifier: "login", sender: self)
+                } else {
+                    //4.
+            let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)
+                    
+            let defaultAction = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+                    alertController.addAction(defaultAction)
+                    
+            self.present(alertController, animated: true, completion: nil)
+                }
+            }
+        }
+    
+    
     }
+    
+ 
     
     
 }

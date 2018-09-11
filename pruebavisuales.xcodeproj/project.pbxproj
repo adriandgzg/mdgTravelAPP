@@ -32,13 +32,14 @@
 		BF20A11B21386E43005C812E /* pruebavisualesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20A11A21386E43005C812E /* pruebavisualesTests.swift */; };
 		BF20A12621386E43005C812E /* pruebavisualesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF20A12521386E43005C812E /* pruebavisualesUITests.swift */; };
 		BF29B623213F3B3D00C9E99C /* Ciudades.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29B622213F3B3D00C9E99C /* Ciudades.swift */; };
-		BF29B629213F4A8500C9E99C /* Lugar1.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29B628213F4A8500C9E99C /* Lugar1.swift */; };
 		BF29B62B213F53C700C9E99C /* VCTownCities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29B62A213F53C700C9E99C /* VCTownCities.swift */; };
 		BF29B6A4214097E100C9E99C /* TVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29B6A2214097E100C9E99C /* TVCell.swift */; };
 		BF29B6A5214097E100C9E99C /* TVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BF29B6A3214097E100C9E99C /* TVCell.xib */; };
 		BF29B6A82140BE1D00C9E99C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BF29B6A72140BE1D00C9E99C /* GoogleService-Info.plist */; };
 		BF29B6AA21417D5500C9E99C /* VCExplore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29B6A921417D5500C9E99C /* VCExplore.swift */; };
 		BF5E3904214753E30005A929 /* Protocolos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E3903214753E30005A929 /* Protocolos.swift */; };
+		BF5E3906214867E40005A929 /* VCMapSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E3905214867E40005A929 /* VCMapSpot.swift */; };
+		BF5E390821486A080005A929 /* MapLugarEspecifico.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E390721486A080005A929 /* MapLugarEspecifico.swift */; };
 		BFDB38F1213DC6E800112995 /* VCInforCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB38F0213DC6E800112995 /* VCInforCountry.swift */; };
 		BFDB38F4213DDF1B00112995 /* InsideaCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */; };
 		BFDB38F5213DDF1B00112995 /* InsideaCountry.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDB38F3213DDF1B00112995 /* InsideaCountry.xib */; };
@@ -96,13 +97,14 @@
 		BF20A12521386E43005C812E /* pruebavisualesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pruebavisualesUITests.swift; sourceTree = "<group>"; };
 		BF20A12721386E43005C812E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BF29B622213F3B3D00C9E99C /* Ciudades.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ciudades.swift; sourceTree = "<group>"; };
-		BF29B628213F4A8500C9E99C /* Lugar1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Lugar1.swift; sourceTree = "<group>"; };
 		BF29B62A213F53C700C9E99C /* VCTownCities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCTownCities.swift; sourceTree = "<group>"; };
 		BF29B6A2214097E100C9E99C /* TVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCell.swift; sourceTree = "<group>"; };
 		BF29B6A3214097E100C9E99C /* TVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVCell.xib; sourceTree = "<group>"; };
 		BF29B6A72140BE1D00C9E99C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BF29B6A921417D5500C9E99C /* VCExplore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCExplore.swift; sourceTree = "<group>"; };
 		BF5E3903214753E30005A929 /* Protocolos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocolos.swift; sourceTree = "<group>"; };
+		BF5E3905214867E40005A929 /* VCMapSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMapSpot.swift; sourceTree = "<group>"; };
+		BF5E390721486A080005A929 /* MapLugarEspecifico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLugarEspecifico.swift; sourceTree = "<group>"; };
 		BFDB38F0213DC6E800112995 /* VCInforCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInforCountry.swift; sourceTree = "<group>"; };
 		BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideaCountry.swift; sourceTree = "<group>"; };
 		BFDB38F3213DDF1B00112995 /* InsideaCountry.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideaCountry.xib; sourceTree = "<group>"; };
@@ -205,8 +207,8 @@
 		BF1BC8CE2139C8BC00E02203 /* Datos */ = {
 			isa = PBXGroup;
 			children = (
+				BF5E390721486A080005A929 /* MapLugarEspecifico.swift */,
 				BF1BC8C62139AE5300E02203 /* Pais.swift */,
-				BF29B628213F4A8500C9E99C /* Lugar1.swift */,
 				BF29B622213F3B3D00C9E99C /* Ciudades.swift */,
 			);
 			name = Datos;
@@ -225,6 +227,7 @@
 				BFDB38F0213DC6E800112995 /* VCInforCountry.swift */,
 				BF29B62A213F53C700C9E99C /* VCTownCities.swift */,
 				BF29B6A921417D5500C9E99C /* VCExplore.swift */,
+				BF5E3905214867E40005A929 /* VCMapSpot.swift */,
 				BF20A10921386E43005C812E /* Main.storyboard */,
 				BF5E3903214753E30005A929 /* Protocolos.swift */,
 			);
@@ -521,6 +524,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5E390821486A080005A929 /* MapLugarEspecifico.swift in Sources */,
 				BF1BC8422138840700E02203 /* VCSingUp.swift in Sources */,
 				BF29B623213F3B3D00C9E99C /* Ciudades.swift in Sources */,
 				BF29B6AA21417D5500C9E99C /* VCExplore.swift in Sources */,
@@ -531,6 +535,7 @@
 				BF20A10821386E43005C812E /* ViewController.swift in Sources */,
 				BF1BC8C22138DB1F00E02203 /* CountriesCollectionViewCell.swift in Sources */,
 				BFDB38F4213DDF1B00112995 /* InsideaCountry.swift in Sources */,
+				BF5E3906214867E40005A929 /* VCMapSpot.swift in Sources */,
 				BF138F5D2142EC3E003DB920 /* CVCellDeCarrousel.swift in Sources */,
 				BF138F552142DE9A003DB920 /* TVCellDelCarrousel.swift in Sources */,
 				BF1BC8C72139AE5300E02203 /* Pais.swift in Sources */,
@@ -539,7 +544,6 @@
 				BF1BC8D32139D1D500E02203 /* VCShowSelection.swift in Sources */,
 				BF1BC8D12139C91700E02203 /* Navcontroller.swift in Sources */,
 				BF138F592142DFBB003DB920 /* TVCelldeImagenes.swift in Sources */,
-				BF29B629213F4A8500C9E99C /* Lugar1.swift in Sources */,
 				BF5E3904214753E30005A929 /* Protocolos.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
