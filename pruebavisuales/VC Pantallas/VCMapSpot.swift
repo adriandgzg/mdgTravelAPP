@@ -34,7 +34,7 @@ class VCMapSpot: UIViewController, CLLocationManagerDelegate {
         distanceSpan  = 2000
         Posicion = CLLocationCoordinate2D(latitude:19.34254860014692 , longitude:-99.19736267990038)
         
-        //La region sel mapa que se muestra en el view
+        //La region del mapa que se muestra en el view
         Map.setRegion(MKCoordinateRegionMakeWithDistance(Posicion, distanceSpan, distanceSpan), animated: true)
         
         

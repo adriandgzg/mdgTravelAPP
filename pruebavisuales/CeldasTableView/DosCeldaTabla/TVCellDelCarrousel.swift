@@ -69,6 +69,7 @@ class TVCellDelCarrousel: UITableViewCell, UICollectionViewDelegate , UICollecti
         selectCelda = indexPath.row
         let datosselectCelda = arrDatosDelCarrusel?.arrLugares[selectCelda]
         DelegateClick?.ClickItemCarrousel(placetoClick: datosselectCelda!)
+        
         print(datosselectCelda?.titulo)
     }
     

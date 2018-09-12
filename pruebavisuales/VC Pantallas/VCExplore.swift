@@ -109,13 +109,14 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         selectCelda = indexPath.row
         let datosselectCelda = ciudades?.arrFeatures[selectCelda]
             
-       // print(datosselectCelda?.titulo)
+        print(datosselectCelda?.titulo)
         }
         
     }
     
     func ClickItemCarrousel(placetoClick: Lugar) {
         print ( placetoClick )
+        
     }
     
     

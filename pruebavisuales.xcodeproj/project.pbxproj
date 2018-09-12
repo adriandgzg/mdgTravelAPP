@@ -40,6 +40,7 @@
 		BF5E3904214753E30005A929 /* Protocolos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E3903214753E30005A929 /* Protocolos.swift */; };
 		BF5E3906214867E40005A929 /* VCMapSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E3905214867E40005A929 /* VCMapSpot.swift */; };
 		BF5E390821486A080005A929 /* MapLugarEspecifico.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E390721486A080005A929 /* MapLugarEspecifico.swift */; };
+		BF5E390A214889C70005A929 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5E3909214889C70005A929 /* MapKit.framework */; };
 		BFDB38F1213DC6E800112995 /* VCInforCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB38F0213DC6E800112995 /* VCInforCountry.swift */; };
 		BFDB38F4213DDF1B00112995 /* InsideaCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */; };
 		BFDB38F5213DDF1B00112995 /* InsideaCountry.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDB38F3213DDF1B00112995 /* InsideaCountry.xib */; };
@@ -105,6 +106,7 @@
 		BF5E3903214753E30005A929 /* Protocolos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocolos.swift; sourceTree = "<group>"; };
 		BF5E3905214867E40005A929 /* VCMapSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMapSpot.swift; sourceTree = "<group>"; };
 		BF5E390721486A080005A929 /* MapLugarEspecifico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLugarEspecifico.swift; sourceTree = "<group>"; };
+		BF5E3909214889C70005A929 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BFDB38F0213DC6E800112995 /* VCInforCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInforCountry.swift; sourceTree = "<group>"; };
 		BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideaCountry.swift; sourceTree = "<group>"; };
 		BFDB38F3213DDF1B00112995 /* InsideaCountry.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideaCountry.xib; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5E390A214889C70005A929 /* MapKit.framework in Frameworks */,
 				87AD57A24E0427B38ACD3E0D /* Pods_pruebavisuales.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,6 +160,7 @@
 		4B88F9240C86FCC2997C4DAC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BF5E3909214889C70005A929 /* MapKit.framework */,
 				C6D4D0A2C596D47D20C85340 /* Pods_pruebavisuales.framework */,
 				41D7CDD4FAC4ACFA4486212F /* Pods_pruebavisualesTests.framework */,
 				D271B99524D496DF39F3F69F /* Pods_pruebavisualesUITests.framework */,
@@ -373,6 +377,11 @@
 					BF20A10121386E43005C812E = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					BF20A11521386E43005C812E = {
 						CreatedOnToolsVersion = 9.2;
