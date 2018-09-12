@@ -17,11 +17,16 @@ class VCShowSelection: UIViewController {
     
     var datosseleccionados : PAIS?
     
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-      self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
-       self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
+       
+    self.navigationController?.isNavigationBarHidden = false
+    
+    self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
+    self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 0.9999960065, green: 1, blue: 1, alpha: 1)
 
         imgPaisSelec.image = datosseleccionados?.foto
         lblNamePaisSelec.text = datosseleccionados?.NombrePais

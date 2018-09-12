@@ -8,21 +8,21 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class VCMapSpot: UIViewController, CLLocationManagerDelegate {
 
-    var LugarMap : CLLocationManager!
+    var LugarMap = CLLocationManager()
     var datosarecibir : PAIS?
-    
-    var distanceSpan : CLLocationDegrees = 0.0
-    var Posicion = CLLocationCoordinate2D ()
-    
+
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var lblTitulo: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
     
     @IBOutlet weak var Map: MKMapView!
     @IBOutlet weak var ViewDesc: UIView!
+    
+  let direction: [UISwipeGestureRecognizerDirection] = [.up, .down]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,95 +31,66 @@ class VCMapSpot: UIViewController, CLLocationManagerDelegate {
         lblDescription.text = datosarecibir?.DescripcionPais
         image.image = datosarecibir?.foto
         
-        distanceSpan  = 2000
-        Posicion = CLLocationCoordinate2D(latitude:19.34254860014692 , longitude:-99.19736267990038)
         
-        //La region del mapa que se muestra en el view
-        Map.setRegion(MKCoordinateRegionMakeWithDistance(Posicion, distanceSpan, distanceSpan), animated: true)
+        for dir in direction {
+           let swipeGesture = UISwipeGestureRecognizer(target: self, action: #selector(self.swipeView(_:)))
+            ViewDesc.addGestureRecognizer(swipeGesture)
+            swipeGesture.direction = dir
+            ViewDesc.isUserInteractionEnabled = true
+            ViewDesc.isMultipleTouchEnabled = true
+        }
+       
+       
+        
+        LugarMap.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled(){
+            LugarMap.delegate = self
+            LugarMap.desiredAccuracy = kCLLocationAccuracyBest
+            LugarMap.startUpdatingLocation()
+        }
         
         
-        let LugarMarcado = LugarMapa( Nombre: "title", coordinate: Posicion)
-        Map.addAnnotation(LugarMarcado)
-        
-    
-
-        // Do any additional setup after loading the view.
+    // Do any additional setup after loading the view.
     }
-
+    @objc func swipeView(_ sender:UISwipeGestureRecognizer){
+        UIView.animate(withDuration: 1.0) {
+            if sender.direction == .down {
+                self.ViewDesc.frame = CGRect(x: self.view.frame.size.width - self.ViewDesc.frame.size.width, y: self.view.frame.size.height - 40, width: self.ViewDesc.frame.size.width, height: self.ViewDesc.frame.size.height)
+            }else {
+                self.ViewDesc.frame = CGRect(x: self.view.frame.size.width - self.ViewDesc.frame.size.width, y: self.ViewDesc.frame.size.height + 70 , width: self.ViewDesc.frame.size.width, height: self.ViewDesc.frame.size.height)
+            }
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        self.encuentraMiPosicionActual()
-        }
-    
-
-    func encuentraMiPosicionActual() {
-        LugarMap = CLLocationManager()
-        LugarMap.delegate = self
-        LugarMap.desiredAccuracy = kCLLocationAccuracyBest
-        LugarMap.requestAlwaysAuthorization()
-        self.localizacionactivada()
-        if CLLocationManager.locationServicesEnabled() {
-            LugarMap.startUpdatingLocation()
-        }
-
-   }
-    
-    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error)
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation])
     {
-        print("Error \(error)")
-    }
-    
-    
-    
-    func localizacionactivada() {
-        LugarMap.delegate = self
-        
-        switch CLLocationManager.authorizationStatus() {
-        case .notDetermined:
-            // Request when-in-use authorization initially
-            LugarMap.requestWhenInUseAuthorization()
-            break
+        if let location = locations.first {
+            print(location.coordinate)
             
-        case .restricted, .denied:
-            // Disable location features
-            ///  disableMyLocationBasedFeatures()
-            break
+            let center = CLLocationCoordinate2D(latitude: location.coordinate.latitude, longitude: location.coordinate.longitude)
+            let region = MKCoordinateRegion(center: center, span: MKCoordinateSpan(latitudeDelta: 0.01, longitudeDelta: 0.01))
+            self.Map.setRegion(region, animated: true)
             
-        case .authorizedWhenInUse:
-            // Enable basic location features
-            // enableMyWhenInUseFeatures()
-            LugarMap.startUpdatingLocation()
-            break
             
-        case .authorizedAlways:
-            // Enable any of your app's location features
-            //enableMyAlwaysFeatures()
-            LugarMap.startUpdatingLocation()
-            break
+            // Drop a pin at user's Current Location
+            let myAnnotation: MKPointAnnotation = MKPointAnnotation()
+            myAnnotation.coordinate = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
+            myAnnotation.title = "Current location"
+            
+            self.Map.addAnnotation(myAnnotation)
+            
         }
     }
+    
+    
 
     
-    
-    @IBAction func ShowMap(_ sender: Any) {
-        if ViewDesc.alpha == 0 {
-            UIView.animate(withDuration: 1.5, delay: 0.2, options: .curveEaseOut, animations: {
-                self.ViewDesc.alpha = 1.0
-            })
-        }
-        else {
-            UIView.animate(withDuration: 1.5, delay: 0.2, options: .curveEaseOut, animations: {
-                self.ViewDesc.alpha = 0.0
-            })
-            
-        }
-    }
-    
-    
-    
+        
     
 }

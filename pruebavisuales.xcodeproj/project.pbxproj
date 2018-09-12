@@ -39,7 +39,6 @@
 		BF29B6AA21417D5500C9E99C /* VCExplore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF29B6A921417D5500C9E99C /* VCExplore.swift */; };
 		BF5E3904214753E30005A929 /* Protocolos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E3903214753E30005A929 /* Protocolos.swift */; };
 		BF5E3906214867E40005A929 /* VCMapSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E3905214867E40005A929 /* VCMapSpot.swift */; };
-		BF5E390821486A080005A929 /* MapLugarEspecifico.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E390721486A080005A929 /* MapLugarEspecifico.swift */; };
 		BF5E390A214889C70005A929 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5E3909214889C70005A929 /* MapKit.framework */; };
 		BFDB38F1213DC6E800112995 /* VCInforCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB38F0213DC6E800112995 /* VCInforCountry.swift */; };
 		BFDB38F4213DDF1B00112995 /* InsideaCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */; };
@@ -105,7 +104,6 @@
 		BF29B6A921417D5500C9E99C /* VCExplore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCExplore.swift; sourceTree = "<group>"; };
 		BF5E3903214753E30005A929 /* Protocolos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocolos.swift; sourceTree = "<group>"; };
 		BF5E3905214867E40005A929 /* VCMapSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMapSpot.swift; sourceTree = "<group>"; };
-		BF5E390721486A080005A929 /* MapLugarEspecifico.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapLugarEspecifico.swift; sourceTree = "<group>"; };
 		BF5E3909214889C70005A929 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BFDB38F0213DC6E800112995 /* VCInforCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInforCountry.swift; sourceTree = "<group>"; };
 		BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideaCountry.swift; sourceTree = "<group>"; };
@@ -211,7 +209,6 @@
 		BF1BC8CE2139C8BC00E02203 /* Datos */ = {
 			isa = PBXGroup;
 			children = (
-				BF5E390721486A080005A929 /* MapLugarEspecifico.swift */,
 				BF1BC8C62139AE5300E02203 /* Pais.swift */,
 				BF29B622213F3B3D00C9E99C /* Ciudades.swift */,
 			);
@@ -533,7 +530,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF5E390821486A080005A929 /* MapLugarEspecifico.swift in Sources */,
 				BF1BC8422138840700E02203 /* VCSingUp.swift in Sources */,
 				BF29B623213F3B3D00C9E99C /* Ciudades.swift in Sources */,
 				BF29B6AA21417D5500C9E99C /* VCExplore.swift in Sources */,

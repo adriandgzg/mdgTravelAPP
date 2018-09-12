@@ -20,6 +20,10 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
     
     @IBOutlet weak var collectionViewCountries: UICollectionView!    
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -102,7 +106,8 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
     }
     
     
-    
+
+
     @IBAction func btnLogOut(_ sender: Any) {
         
         do {
@@ -112,13 +117,10 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
             print ("Error signing out: %@", signOutError)
         }
         
-        let storyboard = UIStoryboard(name: "ViewController", bundle: nil)
-        let initial = storyboard.instantiateInitialViewController()
-        UIApplication.shared.keyWindow?.rootViewController = initial
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let inicial = storyboard.instantiateInitialViewController()
+        UIApplication.shared.keyWindow?.rootViewController = inicial
     }
-    
- 
-
     
     
     

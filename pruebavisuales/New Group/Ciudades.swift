@@ -42,7 +42,24 @@ class Ciudades : NSObject {
             arrCarruseles = []
             arrFeatures  = []
         }
-    //Crear una variable con la URL dada
+    
+    
+    
+    func soloLugares() -> [Lugar] {
+        var arrayLugares = [Lugar]()
+        
+        arrayLugares = arrFeatures
+        
+        for itemcarrusel in arrCarruseles {
+            
+            arrayLugares = arrayLugares + itemcarrusel.arrLugares
+    
+        }
+        
+        return arrayLugares
+    }
+    
+    
     
     
     //Crear una variable con la URL dada

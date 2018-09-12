@@ -41,7 +41,7 @@ class VCSingUp: UIViewController {
     btnCrearcuenta.layer.cornerRadius = 10
     btnfacebook.layer.cornerRadius = 5
 
-        imagenalaizquierda(textfiel: txtusername, imagenes: #imageLiteral(resourceName: "images"))
+        imagenalaizquierda(textfiel: txtusername, imagenes: #imageLiteral(resourceName: "user-1"))
         imagenalaizquierda(textfiel: txtpassword, imagenes:#imageLiteral(resourceName: "cand"))
         imagenalaizquierda(textfiel: txtrepassword, imagenes: #imageLiteral(resourceName: "cand"))
         imagenalaizquierda(textfiel: txtmail, imagenes: #imageLiteral(resourceName: "mail"))

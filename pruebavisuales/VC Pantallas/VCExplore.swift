@@ -12,9 +12,10 @@ import FirebaseAuth
 class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate, carrouselItemDelegate, finishLoadDataDelegate {
 
     
-   
+    var buscando = false
     var selectCelda = 0
     var ciudades: Ciudades?
+    var resultadoBusqueda = [Lugar]()
     
     @IBOutlet weak var TableViewExplore: UITableView!
     
@@ -58,21 +59,40 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            if section == 0 {
+        
+        if buscando {
+            return resultadoBusqueda.count
+        }
+        
+        else {
+        if section == 0 {
                 return (ciudades?.arrCarruseles.count)!
             }
             else {
                 
                 return (ciudades?.arrFeatures.count)!
+            }
         }
-    
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        
+        if buscando {
+            let celda = tableView.dequeueReusableCell(withIdentifier: nombreimagen) as! TVCelldeImagenes
             
+            celda.lbl2.text =  resultadoBusqueda[indexPath.row].titulo
+            cargaImagenFromUrl(uiImage: celda.imagen2 , UrlImage: (resultadoBusqueda[indexPath.row].imgPlace))
+            celda.selectionStyle = .none
+            return celda
+            
+        }
+        else {
+        
             if indexPath.section == 0 {
                 let cell  = tableView.dequeueReusableCell(withIdentifier: collectionnombrecelda) as! TVCellDelCarrousel
-               cell.DelegateClick = self
+                
+            cell.DelegateClick = self
             cell.arrDatosDelCarrusel = ciudades?.arrCarruseles[indexPath.row]
                 cell.selectionStyle = .none
                 return cell
@@ -82,11 +102,19 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource, U
             else  {
                 
                 let celda = tableView.dequeueReusableCell(withIdentifier: nombreimagen) as! TVCelldeImagenes
+                
                 celda.lbl2.text =  ciudades?.arrFeatures[indexPath.row].titulo
                 cargaImagenFromUrl(uiImage: celda.imagen2 , UrlImage: (ciudades?.arrFeatures[indexPath.row].imgPlace)!)
                 celda.selectionStyle = .none
                 return celda
             }
+    
+        
+        
+        }
+        
+        
+        
         
 }
     
@@ -157,10 +185,25 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource, U
     }
  
 
-    
-    
-    
     //UISearchBar
     
-    //ejemplo SearchBar
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        
+        if searchBar.text != ""  {
+             buscando = true
+        } else {
+             buscando = false
+            }
+        
+        
+        self.resultadoBusqueda = (ciudades?.soloLugares().filter({loquesefiltro-> Bool in return loquesefiltro.titulo.lowercased().prefix(searchText.count) == searchText.lowercased()}))!
+            TableViewExplore.reloadData()
+            
+            
+    }
+        
+    
+    
+    
+    
 }

@@ -24,13 +24,15 @@ class VCTownCities: UIViewController, UICollectionViewDataSource, UICollectionVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
+        
+        
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
         self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        
         
     lblTitulo.text = "Una Ciudad"
     ImgImagen.image = UIImage (named: "C9")
-    lblDescripcion.text = "jakshdkjshdksjhdkjasdhjksdhkjsahdkjashd"
+    lblDescripcion.text = "Es un país de América, situado en la parte más meridional de América del Norte, entre el océano Pacífico al sur y al oeste, y el golfo de México y el mar Caribe al este. México limita al norte con los Estados Unidos y al sureste, con Belice y Guatemala."
         
         let atributoString = NSMutableAttributedString (string: lblDescripcion.text!)
         let EstiloParrafo = NSMutableParagraphStyle()
