@@ -10,11 +10,14 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class VCMapSpot: UIViewController, CLLocationManagerDelegate {
+class VCMapSpot: UIViewController, CLLocationManagerDelegate, UINavigationControllerDelegate,UIImagePickerControllerDelegate {
 
     var LugarMap = CLLocationManager()
     var datosarecibir : PAIS?
 
+    
+    var imagePicker: UIImagePickerController!
+    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var lblTitulo: UILabel!
     @IBOutlet weak var lblDescription: UILabel!
@@ -89,8 +92,20 @@ class VCMapSpot: UIViewController, CLLocationManagerDelegate {
     }
     
     
-
+    @IBAction func TakePhoto(_ sender: Any) {
+        //MARK: - Take image
+        imagePicker =  UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+        
+    }
     
+    //MARK: - Done image capture here
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        imagePicker.dismiss(animated: true, completion: nil)
+        image.image = info[UIImagePickerControllerOriginalImage] as? UIImage
+    }
         
     
 }

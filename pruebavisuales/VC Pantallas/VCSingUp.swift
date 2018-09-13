@@ -80,7 +80,14 @@ class VCSingUp: UIViewController {
         else{
             Auth.auth().createUser(withEmail: txtmail.text!, password: txtrepassword.text!){ (user, error) in
                 if error == nil {
-                    self.performSegue(withIdentifier: "signup", sender: self)
+                    
+                    let alertController = UIAlertController(title: "¡Registro Correcto!", message: "Tu cuenta se ha creado correctamente", preferredStyle: .alert)
+                    
+                    let defaultAction = UIAlertAction(title: "Guardar", style: .cancel) { action in self.performSegue(withIdentifier: "signup", sender: self) }
+                    
+                alertController.addAction(defaultAction)
+                    self.present(alertController, animated: true, completion: nil)
+
                 }
                 else{
                     let alertController = UIAlertController(title: "Error", message: error?.localizedDescription, preferredStyle: .alert)

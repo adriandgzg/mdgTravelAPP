@@ -81,9 +81,11 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         if buscando {
             let celda = tableView.dequeueReusableCell(withIdentifier: nombreimagen) as! TVCelldeImagenes
             
+    
             celda.lbl2.text =  resultadoBusqueda[indexPath.row].titulo
             cargaImagenFromUrl(uiImage: celda.imagen2 , UrlImage: (resultadoBusqueda[indexPath.row].imgPlace))
             celda.selectionStyle = .none
+            celda.imagen2.layer.cornerRadius = 10
             return celda
             
         }
@@ -91,11 +93,16 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource, U
         
             if indexPath.section == 0 {
                 let cell  = tableView.dequeueReusableCell(withIdentifier: collectionnombrecelda) as! TVCellDelCarrousel
-                
+        
             cell.DelegateClick = self
+                
             cell.arrDatosDelCarrusel = ciudades?.arrCarruseles[indexPath.row]
+                
+            cell.lblTitulodeCarrusel.text = ciudades?.arrCarruseles[indexPath.row].titulo
+                
                 cell.selectionStyle = .none
                 return cell
+            
             }
             
             
@@ -103,9 +110,13 @@ class VCExplore: UIViewController, UITableViewDelegate, UITableViewDataSource, U
                 
                 let celda = tableView.dequeueReusableCell(withIdentifier: nombreimagen) as! TVCelldeImagenes
                 
+                
                 celda.lbl2.text =  ciudades?.arrFeatures[indexPath.row].titulo
                 cargaImagenFromUrl(uiImage: celda.imagen2 , UrlImage: (ciudades?.arrFeatures[indexPath.row].imgPlace)!)
                 celda.selectionStyle = .none
+                celda.imagen2.layer.cornerRadius = 10
+              
+                
                 return celda
             }
     

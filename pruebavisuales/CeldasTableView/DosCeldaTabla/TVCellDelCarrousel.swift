@@ -13,8 +13,11 @@ class TVCellDelCarrousel: UITableViewCell, UICollectionViewDelegate , UICollecti
     var DelegateClick : carrouselItemDelegate?
     var selectCelda = 0
     var arrDatosDelCarrusel: itemCarrousel?
+    
     @IBOutlet weak var mycollection: UICollectionView!
-    @IBOutlet weak var esteeseltexto: UILabel!
+    
+    @IBOutlet weak var lblTitulodeCarrusel: UILabel!
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,7 +36,7 @@ class TVCellDelCarrousel: UITableViewCell, UICollectionViewDelegate , UICollecti
     func regresaConfiguraciondeELEmentosdelCollection()-> UICollectionViewLayout{
         
         let layout = UICollectionViewFlowLayout()
-        let cellsize = CGSize (width: 120, height: 200)
+        let cellsize = CGSize (width: 120, height: 110)
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 15
         layout.minimumInteritemSpacing = 1
@@ -56,11 +59,14 @@ class TVCellDelCarrousel: UITableViewCell, UICollectionViewDelegate , UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell : CVCellDeCarrousel = mycollection.dequeueReusableCell(withReuseIdentifier: "CVCellDeCarrousel", for: indexPath) as! CVCellDeCarrousel
         
         cell.lblcelda.text = arrDatosDelCarrusel?.arrLugares[indexPath.row].titulo
         cargaImagenFromUrl(uiImage: cell.imgcelda , UrlImage: (arrDatosDelCarrusel?.arrLugares[indexPath.row].imgPlace)!)
-       
+
+        cell.imgcelda.sizeToFit()
+        cell.layer.cornerRadius = 10
         return cell
     }
     
