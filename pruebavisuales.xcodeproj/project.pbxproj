@@ -40,6 +40,7 @@
 		BF5E3904214753E30005A929 /* Protocolos.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E3903214753E30005A929 /* Protocolos.swift */; };
 		BF5E3906214867E40005A929 /* VCMapSpot.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E3905214867E40005A929 /* VCMapSpot.swift */; };
 		BF5E390A214889C70005A929 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF5E3909214889C70005A929 /* MapKit.framework */; };
+		BF5E3982214B07790005A929 /* VCProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5E3981214B07790005A929 /* VCProfile.swift */; };
 		BFDB38F1213DC6E800112995 /* VCInforCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB38F0213DC6E800112995 /* VCInforCountry.swift */; };
 		BFDB38F4213DDF1B00112995 /* InsideaCountry.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */; };
 		BFDB38F5213DDF1B00112995 /* InsideaCountry.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFDB38F3213DDF1B00112995 /* InsideaCountry.xib */; };
@@ -105,6 +106,7 @@
 		BF5E3903214753E30005A929 /* Protocolos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocolos.swift; sourceTree = "<group>"; };
 		BF5E3905214867E40005A929 /* VCMapSpot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMapSpot.swift; sourceTree = "<group>"; };
 		BF5E3909214889C70005A929 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		BF5E3981214B07790005A929 /* VCProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCProfile.swift; sourceTree = "<group>"; };
 		BFDB38F0213DC6E800112995 /* VCInforCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCInforCountry.swift; sourceTree = "<group>"; };
 		BFDB38F2213DDF1B00112995 /* InsideaCountry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InsideaCountry.swift; sourceTree = "<group>"; };
 		BFDB38F3213DDF1B00112995 /* InsideaCountry.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InsideaCountry.xib; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 				BF29B62A213F53C700C9E99C /* VCTownCities.swift */,
 				BF29B6A921417D5500C9E99C /* VCExplore.swift */,
 				BF5E3905214867E40005A929 /* VCMapSpot.swift */,
+				BF5E3981214B07790005A929 /* VCProfile.swift */,
 				BF20A10921386E43005C812E /* Main.storyboard */,
 				BF5E3903214753E30005A929 /* Protocolos.swift */,
 			);
@@ -541,6 +544,7 @@
 				BF1BC8C22138DB1F00E02203 /* CountriesCollectionViewCell.swift in Sources */,
 				BFDB38F4213DDF1B00112995 /* InsideaCountry.swift in Sources */,
 				BF5E3906214867E40005A929 /* VCMapSpot.swift in Sources */,
+				BF5E3982214B07790005A929 /* VCProfile.swift in Sources */,
 				BF138F5D2142EC3E003DB920 /* CVCellDeCarrousel.swift in Sources */,
 				BF138F552142DE9A003DB920 /* TVCellDelCarrousel.swift in Sources */,
 				BF1BC8C72139AE5300E02203 /* Pais.swift in Sources */,
