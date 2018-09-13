@@ -64,7 +64,7 @@ class PAIS: NSObject {
         let España = PAIS ()
         España.NombrePais = "ESPAÑA"
         España.DescripcionPais = "Es famosa por sus calles"
-        España.foto = UIImage(named: "espana")!
+        España.foto = UIImage(named: "C5")!
         
             let Madrid = PAIS ()
             Madrid.NombrePais = "MADRID"

@@ -47,8 +47,9 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 40
-        layout.minimumInteritemSpacing = 0.1
-        let size = CGSize(width: collectionViewCountries.frame.size.width - 40, height: collectionViewCountries.frame.size.height)
+        //layout.minimumInteritemSpacing = 0.1
+        let size = CGSize(width: collectionViewCountries.frame.size.width - 100, height: collectionViewCountries.frame.size.height)
+        layout.sectionInset = UIEdgeInsets (top: 0, left: 30, bottom: 0, right: 30)
         layout.itemSize = size
      
         
