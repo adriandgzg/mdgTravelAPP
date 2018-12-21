@@ -85,6 +85,7 @@ class VCTownCities: UIViewController, UICollectionViewDataSource, UICollectionVi
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TVCell", for: indexPath) as! TVCell
     
+        
         cell.TCImage.image = arrayfotos[indexPath.row].foto
         cell.TCLlb.text = arrayfotos[indexPath.row].NombrePais
         
@@ -95,6 +96,7 @@ class VCTownCities: UIViewController, UICollectionViewDataSource, UICollectionVi
         
         celdaseleccionada = indexPath.row
         let datos = arrayfotos[celdaseleccionada]
+        
         self.performSegue(withIdentifier: "MapSpot", sender: datos)
         
     }

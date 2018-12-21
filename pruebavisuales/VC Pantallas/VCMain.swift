@@ -27,7 +27,8 @@ class VCMain: UIViewController , UICollectionViewDataSource, UICollectionViewDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: UIBarButtonItemStyle.plain , target: nil, action: nil)
+        self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "" , style: UIBarButtonItemStyle.plain , target: nil, action: nil)
+        
         self.navigationItem.backBarButtonItem?.tintColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         
         viewContentTitle.backgroundColor = UIColor.clear

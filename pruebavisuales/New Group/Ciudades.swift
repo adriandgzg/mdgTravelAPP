@@ -8,7 +8,6 @@
 
 import UIKit
 
-    
 class Lugar: NSObject {
     
         var titulo:String
@@ -32,35 +31,31 @@ class itemCarrousel: NSObject {
             arrLugares = []
         }
     }
-    
+
+
 class Ciudades : NSObject {
         var delegate: finishLoadDataDelegate?
         var arrCarruseles: [itemCarrousel]
         var arrFeatures: [Lugar]
+    
     
     override init(){
             arrCarruseles = []
             arrFeatures  = []
         }
     
-    
-    
-    func soloLugares() -> [Lugar] {
+   func soloLugares() -> [Lugar] {
         var arrayLugares = [Lugar]()
-        
+    
         arrayLugares = arrFeatures
-        
         for itemcarrusel in arrCarruseles {
-            
-            arrayLugares = arrayLugares + itemcarrusel.arrLugares
+        arrayLugares = arrayLugares + itemcarrusel.arrLugares
     
         }
         
         return arrayLugares
     }
-    
-    
-    
+ 
     
     //Crear una variable con la URL dada
     func obtendatos(){
@@ -69,13 +64,13 @@ class Ciudades : NSObject {
         
         //Comprueba la condicion y (solo si es falso), se ejecuta la condicion
         guard let url = URL(string: urlString) else { return }
-        
+            
         /*
          Crea una tarea que recupera el contenido de una URL especificada y lo pone en una variable data. llama a un controlador al finalizar.
          
          func dataTask(with: URL, completionHandler: (Data?, URLResponse?, Error?)
          */
-        URLSession.shared.dataTask(with: url) {(data,_ , err) in
+            URLSession.shared.dataTask(with: url) {(data,_ , err) in
             DispatchQueue.main.async {
                 if err != nil {
                     print("fallo al obtener datos de la url")
@@ -128,6 +123,7 @@ class Ciudades : NSObject {
             
             for item2 in dictionary ["arrFeatures"] as! [Dictionary<String,Any?>]
             {
+                
                 let lugaresfinales = Lugar ()
                 lugaresfinales.titulo = item2["tituloLugar"] as! String
                 lugaresfinales.imgPlace = item2["imgPlace"] as! String
@@ -136,8 +132,7 @@ class Ciudades : NSObject {
                 ciudad.arrFeatures.append(lugaresfinales)
             }
          
-        
-            
+    
             //ya termino de leer todo
             delegate?.cargaFinal(ciudades: ciudad)
             
